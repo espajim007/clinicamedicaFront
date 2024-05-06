@@ -1,0 +1,172 @@
+/* Estilos generales */
+html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  /* Estilos de la barra de navegación */
+  .custom-bg-gray {
+    background-color: #dddddd; /* Cambia esto por el tono de gris deseado */
+  }
+  
+  .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #909ba7;
+    padding: 3px 0;
+  }
+  
+  .navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .navbar-nav {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-link {
+    font-size: 18px;
+    color: #333;
+    margin-left: 10px;
+  }
+  
+  .nav-link:hover {
+    color: #ffffff;
+  }
+  
+  .btn-with-bg {
+    background-color: #6a3d3d98;
+    color: #fff;
+  }
+  
+  .navbar-toggler {
+    border: none;
+    background-color: transparent;
+  }
+  
+  .navbar-toggler-icon {
+    background-color: #333;
+  }
+  
+  /* Estilos del carousel */
+  .carousel-item img {
+    max-width: 100%;
+    height: auto; /* Hacer las imágenes responsivas */
+    margin: 0 auto;
+  }
+  
+  /* Estilos de las secciones */
+  section {
+    padding: 50px 0;
+  }
+  
+  h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #007bff;
+  }
+  
+  p {
+    font-size: 18px;
+    color: #495057;
+  }
+  
+  .clinic-details h3 {
+    color: #fda000;
+    margin-bottom: 10px;
+  }
+  #nuestras-clinicas h3 {
+    color: #fda000;
+    margin-bottom: 10px;
+  }
+  
+  /* Estilos específicos para cada sección */
+  section h2 {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center; /* Centrar el título */
+  }
+  
+  section p {
+    font-family: 'Roboto', sans-serif;
+    text-align: justify;
+  }
+  
+  #nuestras-clinicas .row {
+    margin-top: 30px;
+  }
+  
+  #nuestras-clinicas .col-md-6 {
+    margin-bottom: 30px;
+  }
+  
+  #nuestras-clinicas h3 {
+    color: #007bff;
+  }
+  
+  #horarios ul,
+  #especialidades ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  #horarios li,
+  #especialidades li {
+    margin-bottom: 10px;
+  }
+  
+  /* Estilos del footer */
+  footer {
+    background-color: #343a40;
+    color: #fff;
+    padding: 30px 0;
+  }
+  
+  footer a {
+    margin: 0 10px;
+  }
+  
+  /* Estilos específicos para las imágenes de las redes sociales */
+  footer img {
+    width: 30px;
+    height: auto;
+  }
+  
+  /* Media queries */
+  @media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 20px;
+    }
+  
+    .nav-link {
+        font-size: 16px;
+    }
+  
+    h2 {
+        font-size: 30px;
+    }
+  
+    p {
+        font-size: 16px;
+    }
+  
+    footer img {
+        width: 25px;
+    }
+  }
+  
