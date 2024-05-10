@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
       this.service.sesion(this.loginForm.value).subscribe({
         next: (res) => {
           this.loginForm.reset();
-          this.router.navigate(['prueba']);
+          this.router.navigate(['menu']);
         },
         error: (err) => {
           console.error(err); // Mostrar el error en la consola del navegador

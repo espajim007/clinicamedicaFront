@@ -5,6 +5,8 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { PruebaComponent } from './components/prueba/prueba.component';
 import { RegistrarseComponent } from './components/registrarse/registrarse.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { MenuCatalogosComponent } from './components/Catalogos/menu-catalogos/menu-catalogos.component';
+import { MainLayotComponent } from './components/main-layot/main-layot.component';
 
 
 const routes: Routes = [
@@ -12,8 +14,9 @@ const routes: Routes = [
   {path:'login', component: LoginComponent},
   {path:'inicio', component: InicioComponent},
   {path:'registrarse', component: RegistrarseComponent},
-  {path:'prueba', component: PruebaComponent},
-  {path:'menu', component: MenuComponent},
+  { path: 'prueba', component: PruebaComponent },
+  { path: 'menu', component: MenuComponent },
+  { path: 'menu-catalogos', component: MenuCatalogosComponent },
  ];
 
 @NgModule({

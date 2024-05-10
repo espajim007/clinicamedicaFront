@@ -1,66 +1,31 @@
-<div id="viewport">
-    <!-- Sidebar -->
-    <div id="sidebar">
-      <header>
-        <a href="#">My App</a>
-      </header>
-      <ul class="nav">
-        <li>
-          <a href="#">
-            <i class="zmdi zmdi-view-dashboard"></i> Dashboard
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="zmdi zmdi-link"></i> Shortcuts
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="zmdi zmdi-widgets"></i> Overview
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="zmdi zmdi-calendar"></i> Events
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="zmdi zmdi-info-outline"></i> About
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="zmdi zmdi-settings"></i> Services
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="zmdi zmdi-comment-more"></i> Contact
-          </a>
-        </li>
-      </ul>
-    </div>
-    <!-- Content -->
-    <div id="content">
-      <nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <ul class="nav navbar-nav navbar-right">
-            <li>
-              <a href="#"><i class="zmdi zmdi-notifications text-danger"></i>
-              </a>
-            </li>
-            <li><a href="#">Test User</a></li>
-          </ul>
+<div class="container-fluid">
+    <div class="row flex-nowrap">
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+            <!-- Menú lateral -->
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                <a href="/menu" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                    <span class="fs-5 d-none d-sm-inline">Menu</span>
+                </a>
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                    <li class="nav-item">
+                        <a routerLink="/menu-catalogos" class="nav-link align-middle px-0">
+                            <i class="fs-4 bi bi-collection"></i> <span class="ms-1 d-none d-sm-inline">Catalogos</span>
+                        </a>
+                    </li>
+                    <!-- Otros elementos del menú -->
+                </ul>
+                <hr>
+                <div class="dropdown pb-4">
+                    <span class="d-none d-sm-inline mx-1">usuario</span>
+                </div>
+            </div>
         </div>
-      </nav>
-      <div class="container-fluid">
-        <h1>Simple Sidebar</h1>
-        <p>
-          Make sure to keep all page content within the 
-          <code>#content</code>.
-        </p>
-      </div>
+        <div class="col py-3 d-flex justify-content-center align-items-center">
+            <!-- Nuevo div para el contenido en el área blanca -->
+            <div class="content-area">
+                <img src="../../../assets/images/Logos/Logo menu.png" alt="Descripción de la imagen" style="max-width: 50%; height: auto;">
+            </div>
+            <router-outlet></router-outlet>
+        </div>
     </div>
-  </div>
+</div>
