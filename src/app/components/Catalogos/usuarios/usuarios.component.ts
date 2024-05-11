@@ -3,6 +3,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { CatalogosService } from 'src/app/services/catalogos.service';
 import { Usuario } from 'src/app/models/usuario.interface';
 import { EditarUsuarioComponent } from '../editar-usuario/editar-usuario.component';
+import { rol } from 'src/app/models/roles.interface';
+import { AgregarUsuarioComponent } from '../agregar-usuario/agregar-usuario.component'; 
 
 @Component({
   selector: 'app-usuarios',
@@ -12,8 +14,12 @@ import { EditarUsuarioComponent } from '../editar-usuario/editar-usuario.compone
 export class UsuariosComponent implements OnInit {
 
   usuarios: Usuario[] = [];
+  roles: rol[] = [];
   page: number = 1;
-  usuarioSeleccionado: Usuario | null = null; 
+  usuarioSeleccionado: Usuario | null = null;
+  usuarioBackup: Usuario | null = null; // Variable para guardar la copia de respaldo del usuario
+  
+
   constructor(private catalogosService: CatalogosService, private dialog: MatDialog) { }
 
   ngOnInit(): void {
@@ -25,28 +31,55 @@ export class UsuariosComponent implements OnInit {
         console.error('Error al obtener usuarios:', error);
       }
     );
+
+    this.catalogosService.getRoles().subscribe(
+      (data: rol[]) => {
+        this.roles = data;
+      },
+      error => {
+        console.error('Error al obtener roles:', error);
+      }
+    );
   }
 
-  // Método para abrir el modal de edición
   abrirModalEditar(usuario: Usuario): void {
+    // Guardar una copia de respaldo del usuario seleccionado
+    this.usuarioBackup = { ...usuario };
     const dialogRef = this.dialog.open(EditarUsuarioComponent, {
-      width: '400px', // Ajusta el ancho según tus necesidades
-      data: usuario // Pasa los datos del usuario al modal
+      width: '400px',
+      data: usuario
     });
 
-    // Escucha el evento de cierre del modal
     dialogRef.afterClosed().subscribe(result => {
-      // Actualiza los datos del usuario si se guardaron cambios
       if (result) {
-        // Encuentra el índice del usuario en el arreglo
         const index = this.usuarios.findIndex(u => u.id_usuario === result.id_usuario);
-        // Actualiza los datos del usuario en el arreglo
         if (index !== -1) {
           this.usuarios[index] = result;
         }
+      } else {
+        // Si se cancela la edición, restaurar la copia de respaldo del usuario
+        if (this.usuarioBackup) {
+          const index = this.usuarios.findIndex(u => u.id_usuario === this.usuarioBackup!.id_usuario);
+          if (index !== -1) {
+            this.usuarios[index] = this.usuarioBackup;
+          }
+        }
       }
+      // Limpiar la copia de respaldo del usuario
+      this.usuarioBackup = null;
     });
   }
 
+  getRolNombre(idRol: number): string {
+    const rol = this.roles.find(rol => rol.id_rol === idRol);
+    return rol ? rol.nombre : 'Sin rol'; 
+  }
+
+  abrirModalAgregarUsuario(): void {
+    this.dialog.open(AgregarUsuarioComponent, {
+      width: '400px', // Ajusta el ancho según tus necesidades
+      disableClose: true // Opcional, para evitar que el usuario cierre el modal haciendo clic fuera de él
+    });
+  }
 
 }

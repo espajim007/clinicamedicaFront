@@ -1,59 +1,56 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { Usuario } from 'src/app/models/usuario.interface';
-import { rol } from 'src/app/models/roles.interface';
 import { CatalogosService } from 'src/app/services/catalogos.service';
+import { Usuario } from 'src/app/models/usuario.interface';
+import { rol } from 'src/app/models/roles.interface'; 
+import { catchError } from 'rxjs/operators';
+import { of } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-editar-usuario',
   templateUrl: './editar-usuario.component.html',
   styleUrls: ['./editar-usuario.component.scss']
 })
-export class EditarUsuarioComponent {
-  [x: string]: any;
-  usuarioEditado: Usuario;
-  usuarioOriginal: Usuario;
+export class EditarUsuarioComponent implements OnInit {
+
   roles: rol[] = [];
 
   constructor(
-    @Inject(MAT_DIALOG_DATA) public data: Usuario,
+    private catalogosService: CatalogosService,
     public dialogRef: MatDialogRef<EditarUsuarioComponent>,
-    private service: CatalogosService
-  ) {
-    // Crear una copia del usuario original para editar
-    this.usuarioEditado = { ...data };
-    this.usuarioOriginal = { ...data };
-  }
+      private router: Router,
+    @Inject(MAT_DIALOG_DATA) public usuarioSeleccionado: Usuario
+  ) { }
 
   ngOnInit(): void {
-    this.service.getRoles().subscribe(
-      (roles: rol[]) => {
-        this.roles = roles;
+    this.catalogosService.getRoles().subscribe(
+      (data: rol[]) => {
+        this.roles = data;
       },
       error => {
         console.error('Error al obtener roles:', error);
       }
     );
-    this.usuarioEditado = { ...this.data };
   }
 
   guardarCambios(): void {
-    this.service.editarUsuarios(this.usuarioEditado).subscribe(
-      response => {
-        console.log('Datos actualizados con éxito:', response);
-        this.dialogRef.close(true);
-        window.location.reload(); 
-      },
-      error => {
-        console.error('Error al actualizar datos:', error);
-        // Maneja el error según sea necesario
+    console.log(this.usuarioSeleccionado);
+    this.catalogosService.editarUsuarios(this.usuarioSeleccionado).pipe(
+      catchError(error => {
+        console.error('Error al editar usuario:', error);
+        return of(null);
+      })
+    ).subscribe(response => {
+      if (response !== null) {
+        console.log('Usuario editado:', response);
+        this.router.navigateByUrl('/ruta-de-la-pagina-especifica');
+      } else {
+        console.log('No se pudo editar el usuario');
       }
-    );
-    this.dialogRef.close(this.usuarioEditado);
+    });
+
+    this.dialogRef.close(this.usuarioSeleccionado);
   }
 
-  cerrarModal(): void {
-    // Si cierras el modal sin guardar cambios, restaura el usuario original
-    this.dialogRef.close(this.usuarioOriginal);
-  }
 }

@@ -17,6 +17,7 @@ import { EditarUsuarioComponent } from './components/Catalogos/editar-usuario/ed
 import { FormsModule } from '@angular/forms'; 
 import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AgregarUsuarioComponent } from './components/Catalogos/agregar-usuario/agregar-usuario.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     UsuariosComponent,
     MenuCatalogosComponent,
     MainLayotComponent,
-    EditarUsuarioComponent
+    EditarUsuarioComponent,
+    AgregarUsuarioComponent
   ],
   imports: [
     BrowserModule,

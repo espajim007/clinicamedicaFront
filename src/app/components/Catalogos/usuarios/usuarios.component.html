@@ -23,7 +23,7 @@
                   <!-- Usé *ngFor para iterar sobre los usuarios -->
                   <tr *ngFor="let usuario of usuarios | paginate: { itemsPerPage: 5, currentPage: page }">
                     <td>{{ usuario.id_usuario }}</td>
-                    <td>{{ usuario.rol }}</td>
+                    <td>{{ getRolNombre(usuario.id_rol ?? 0) }}</td>
                     <td>{{ usuario.nombre }}</td>
                     <td>{{ usuario.email }}</td>
                     <td>{{ usuario.estado ? 'Activo' : 'Inactivo' }}</td>
@@ -41,7 +41,8 @@
               <!-- Controles de paginación -->
               <pagination-controls (pageChange)="page = $event" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
               <!-- Botón "Añadir usuario" -->
-              <button class="btn btn-add-user">Añadir usuario</button>
+              <button class="btn btn-add-user" (click)="abrirModalAgregarUsuario()">Añadir usuario</button>
+
             </div>
           </div>
         </div>

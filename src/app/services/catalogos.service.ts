@@ -12,11 +12,14 @@ export class CatalogosService {
   getUsuarios() {
     return this.http.get<Usuario[]>(`${this.baseUrl}catalogos/usuarios`); 
   }
-  getRoles() {
-    return this.http.get<rol[]>(`${this.baseUrl}catalogos/roles`); 
-  }
   editarUsuarios(datos: any){
     return this.http.post<any>(`${this.baseUrl}catalogos/editar-usuario`, datos);
   }
+  agregarUsuarios(datos: any){
+    return this.http.post<any>(`${this.baseUrl}catalogos/nuevo-usuario`, datos);
+  }
 
+  getRoles() {
+    return this.http.get<rol[]>(`${this.baseUrl}catalogos/roles`); 
+  }
 }
