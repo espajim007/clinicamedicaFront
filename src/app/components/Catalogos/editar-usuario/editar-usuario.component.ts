@@ -44,12 +44,12 @@ export class EditarUsuarioComponent implements OnInit {
     ).subscribe(response => {
       if (response !== null) {
         console.log('Usuario editado:', response);
-        this.router.navigateByUrl('/ruta-de-la-pagina-especifica');
+        
       } else {
         console.log('No se pudo editar el usuario');
       }
     });
-
+    window.location.reload();
     this.dialogRef.close(this.usuarioSeleccionado);
   }
 
