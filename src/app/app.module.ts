@@ -12,7 +12,11 @@ import { MenuComponent } from './components/menu/menu.component';
 import { UsuariosComponent } from './components/Catalogos/usuarios/usuarios.component';
 import { MenuCatalogosComponent } from './components/Catalogos/menu-catalogos/menu-catalogos.component';
 import { MainLayotComponent } from './components/main-layot/main-layot.component';
-
+import { NgxPaginationModule } from 'ngx-pagination';
+import { EditarUsuarioComponent } from './components/Catalogos/editar-usuario/editar-usuario.component';
+import { FormsModule } from '@angular/forms'; 
+import { MatDialogModule } from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,15 +27,24 @@ import { MainLayotComponent } from './components/main-layot/main-layot.component
     MenuComponent,
     UsuariosComponent,
     MenuCatalogosComponent,
-    MainLayotComponent
+    MainLayotComponent,
+    EditarUsuarioComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule, //npm install ngx-pagination --save sirve para la paginacion de contenido
+    FormsModule,
+    MatDialogModule,
+    BrowserAnimationsModule 
+
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+//ng add @angular/material si hay algun error relacionado con ese asi se instala 

@@ -19,7 +19,7 @@ export class RegistrarseComponent implements OnInit {
   ngOnInit(): void {
     this.loginForm = this.fb.group({
       contrasenia: ['',Validators.required],
-      correo: ['',Validators.required],
+      email: ['',Validators.required],
       nombre: ['',Validators.required]
     })
   }

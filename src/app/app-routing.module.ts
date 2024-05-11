@@ -7,6 +7,7 @@ import { RegistrarseComponent } from './components/registrarse/registrarse.compo
 import { MenuComponent } from './components/menu/menu.component';
 import { MenuCatalogosComponent } from './components/Catalogos/menu-catalogos/menu-catalogos.component';
 import { MainLayotComponent } from './components/main-layot/main-layot.component';
+import { UsuariosComponent } from './components/Catalogos/usuarios/usuarios.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,8 @@ const routes: Routes = [
   {path:'menu', component: MenuComponent},
   {path:'menu-catalogos', component: MenuCatalogosComponent},
   {path:'prueba', component: PruebaComponent},
+  {path:'usuarios', component: UsuariosComponent},
+  
  ];
 
 @NgModule({

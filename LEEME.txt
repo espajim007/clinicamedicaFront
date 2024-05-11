@@ -1,0 +1,1 @@
+El proyecto cuenta con algunas dependencias extras que es posible que se deban instalar, estas estan en styles.css y appModule.ts
