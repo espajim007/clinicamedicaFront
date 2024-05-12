@@ -30,9 +30,6 @@
           <a class="nav-link btn" (click)="scrollTo('nuestras-clinicas')">Nuestras Clínicas</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link btn" (click)="scrollTo('ubicaciones')">Ubicaciones</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link btn" (click)="scrollTo('horarios')">Horarios</a>
         </li>
         <li class="nav-item">
@@ -66,18 +63,30 @@
 
 <!-- Sections -->
 <section id="quienes-somos" class="bg-light py-5">
-  <div class="container">
-    <h2>Quiénes Somos</h2>
-    <p>Family Health La Clinica es un lugar donde cada miembro de tu hogar puede recibir atención médica
-       de calidad. Como un centro de salud comunitario, damos la bienvenida a los pacientes para ofrecer 
-       servicios médicos a comunidades. Nuestras modernas instalaciones y alcance estatal son el trabajo 
-       de décadas. Tenemos un rico legado liderado por la comunidad y nos sentimos honrados de vivir la 
-       misión a través de nuestro trabajo diario.</p>
+  <div class="container"> 
+    <div class="colored-box">
+      <h2 >Quiénes Somos</h2>
+      <p>Family Health La Clinica es un lugar donde cada miembro de tu hogar puede recibir atención médica
+         de calidad. Como un centro de salud comunitario, damos la bienvenida a los pacientes para ofrecer 
+         servicios médicos a comunidades. Nuestras modernas instalaciones y alcance estatal son el trabajo 
+         de décadas. Tenemos un rico legado liderado por la comunidad y nos sentimos honrados de vivir la 
+         misión a través de nuestro trabajo diario.</p>
+    </div>
   </div>
 </section>
 
+<style>
+  /* Estilos CSS */
+  .colored-box {
+    background-color: #0F5A91; 
+    padding: 20px;
+    border-radius: 10px; 
+  }
+</style>
+
 <section id="mision" class="bg-light py-5">
   <div class="container">
+    <div class="colored-box">
     <h2>Misión</h2>
     <p>En Family Health, nuestra misión es ser un faro de esperanza y cuidado en la comunidad, proporcionando 
       atención médica compasiva y centrada en el paciente que abarque todas las facetas de la salud familiar.
@@ -86,10 +95,12 @@
          efectivo de enfermedades. Nos esforzamos por cultivar un ambiente de confianza y apoyo donde cada persona
           se sienta escuchada, respetada y valorada, independientemente de su situación o historial médico.</p>
   </div>
+</div>
 </section>
 
 <section id="vision" class="bg-light py-5">
   <div class="container">
+    <div class="colored-box">
     <h2>Visión</h2>
     <p>En Family Health, aspiramos a ser más que una clínica médica; nos esforzamos por ser un pilar 
       de la comunidad, un lugar al que las familias acuden no solo en momentos de enfermedad, sino también 
@@ -100,54 +111,60 @@
       en el avance de la medicina preventiva y la promoción de la salud en nuestra comunidad, inspirando a otros
        a unirse a nosotros en nuestro viaje hacia un mundo más saludable.</p>
   </div>
+</div>
 </section>
 
 
 <section id="nuestras-clinicas" class="bg-light py-5">
   <div class="container">
+    <div class="colored-box">
     <h2>Nuestras Clínicas</h2>
     <p>Atención para toda la familia en 4 distintas ubicaciones, con espacios amplios y modernos y con la más alta tecnología para diagnóstico y tratamiento.</p>
     <div class="row">
       <div class="col-md-6">
         <h3>Clínica Américas</h3>
-        <p>Dirección: Avenida Las Américas 17-78, Zona 13</p>
-        <p>Teléfono: (502) 2300 4000</p>
+        <p><b>Dirección:</b> Avenida Las Américas 17-78, Zona 13</p>
+        <p><b>Teléfono:</b> (502) 2300 4000</p>
       </div>
       <div class="col-md-6">
         <h3>Clínica Portales</h3>
-        <p>Dirección: 12 calle 4-10 zona 17 Zona Portales, Carretera al Atlántico, Al lado de Office Depot.</p>
-        <p>Teléfono: (502) 2300 4000</p>
+        <p><b>Dirección:</b> 12 calle 4-10 zona 17 Zona Portales, Carretera al Atlántico, Al lado de Office Depot.</p>
+        <p><b>Teléfono:</b> (502) 2300 4000</p>
       </div>
     </div>
     <div class="row">
       <div class="col-md-6">
         <h3>Clínica Vista Hermosa</h3>
-        <p>Dirección: 2a calle 17-88, Pacific Vista Hermosa Zona 15</p>
-        <p>Teléfono: (502) 2300 4000</p>
+        <p><b>Dirección:</b> 2a calle 17-88, Pacific Vista Hermosa Zona 15</p>
+        <p><b>Teléfono:</b> (502) 2300 4000</p>
       </div>
       <div class="col-md-6">
         <h3>Clínica Majadas Once</h3>
-        <p>Dirección: Diagonal 12, 24-55, Zona 11, Interior Parque Majadas</p>
-        <p>Teléfono: (502) 2300 4000</p>
+        <p><b>Dirección:</b> Diagonal 12, 24-55, Zona 11, Interior Parque Majadas</p>
+        <p><b>Teléfono:</b> (502) 2300 4000</p>
       </div>
     </div>
   </div>
+</div>
 </section>
 
 <section id="horarios" class="bg-light py-5">
   <div class="container">
+    <div class="colored-box">
     <h2>Horarios</h2>
     <p>Contenido sobre los horarios de atención.</p>
     <ul>
-      <li>Lunes a viernes: 07:00 - 20:00</li>
-      <li>Sábados: 07:00 - 17:00</li>
-      <li>Domingo: 07:00 - 13:00</li>
+      <li><b>Lunes a viernes:</b> 07:00 - 20:00</li>
+      <li><b>Sábado:</b> 07:00 - 17:00</li>
+      <li><b>Domingo:</b> 07:00 - 13:00</li>
     </ul>
   </div>
+</div>
 </section>
 
 <section id="especialidades" class="bg-light py-5">
   <div class="container">
+    <div class="colored-box">
     <h2>Especialidades</h2>
     <p>Atendemos en más de 5 especialidades médicas, desde pediatría hasta cardiología. Cada uno de nuestros 
       doctores son especialistas en su campo.</p>
@@ -174,6 +191,7 @@
       </div>
     </div>
   </div>
+</div>
 </section>
 
 <!-- Footer -->

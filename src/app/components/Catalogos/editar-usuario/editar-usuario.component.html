@@ -1,29 +1,38 @@
-<h2>{{usuarioSeleccionado.nombre}}</h2>
-<form (ngSubmit)="guardarCambios()" #editarUsuarioForm="ngForm">
-  <div class="form-group">
-    <label>ID Usuario:</label>
-    <input type="text" class="form-control" name="idUsuario" [(ngModel)]="usuarioSeleccionado.id_usuario" disabled>
-  </div>
-  <div class="form-group">
-    <label>Rol:</label>
-    <select class="form-control" name="idRol" [(ngModel)]="usuarioSeleccionado.id_rol">
-      <option *ngFor="let rol of roles" [value]="rol.id_rol">{{rol.nombre}}</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label>Nombre:</label>
-    <input type="text" class="form-control" name="nombre" [(ngModel)]="usuarioSeleccionado.nombre">
-  </div>
-  <div class="form-group">
-    <label>Email:</label>
-    <input type="email" class="form-control" name="email" [(ngModel)]="usuarioSeleccionado.email">
-  </div>
-  <div class="form-group">
-    <label>Estado:</label>
-    <select class="form-control" name="estado" [(ngModel)]="usuarioSeleccionado.estado">
-      <option [value]="true">Activo</option>
-      <option [value]="false">Inactivo</option>
-    </select>
-  </div>
-  <button type="submit" class="btn btn-primary">Guardar Cambios</button>
-</form>
+<div class="container mt-5">
+  <h2>{{ usuarioSeleccionado.nombre }}</h2>
+  <form (ngSubmit)="guardarCambios()" #editarUsuarioForm="ngForm">
+    <div class="form-group">
+      <label>ID Usuario:</label>
+      <input type="text" class="form-control" name="idUsuario" [(ngModel)]="usuarioSeleccionado.id_usuario" disabled>
+    </div>
+    <div class="form-group">
+      <label>Rol:</label>
+      <select class="form-control" name="idRol" [(ngModel)]="usuarioSeleccionado.id_rol">
+        <option *ngFor="let rol of roles" [value]="rol.id_rol">{{rol.nombre}}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Nombre:</label>
+      <input type="text" class="form-control" name="nombre" [(ngModel)]="usuarioSeleccionado.nombre">
+    </div>
+    <div class="form-group">
+      <label>Email:</label>
+      <input type="email" class="form-control" name="email" [(ngModel)]="usuarioSeleccionado.email">
+    </div>
+    <div class="form-group">
+      <label>Estado:</label>
+      <select class="form-control" name="estado" [(ngModel)]="usuarioSeleccionado.estado">
+        <option [value]="true">Activo</option>
+        <option [value]="false">Inactivo</option>
+      </select>
+    </div>    
+    <!-- Botón para borrar el usuario -->
+    <button type="button" class="btn btn-danger" (click)="borrarUsuario()">Borrar Usuario</button>
+
+    <div style="display: inline-block; width: 3rem;"></div>
+
+    <!-- Botón para guardar cambios -->
+    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+  </form>
+</div>
+

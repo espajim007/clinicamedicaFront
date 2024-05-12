@@ -19,7 +19,7 @@ export class EditarUsuarioComponent implements OnInit {
   constructor(
     private catalogosService: CatalogosService,
     public dialogRef: MatDialogRef<EditarUsuarioComponent>,
-      private router: Router,
+    private router: Router,
     @Inject(MAT_DIALOG_DATA) public usuarioSeleccionado: Usuario
   ) { }
 
@@ -34,7 +34,11 @@ export class EditarUsuarioComponent implements OnInit {
     );
   }
 
+  
   guardarCambios(): void {
+    // Verificar y configurar el valor de estado correctamente
+    this.usuarioSeleccionado.estado = this.usuarioSeleccionado.estado ? true : false;
+
     console.log(this.usuarioSeleccionado);
     this.catalogosService.editarUsuarios(this.usuarioSeleccionado).pipe(
       catchError(error => {
@@ -44,7 +48,8 @@ export class EditarUsuarioComponent implements OnInit {
     ).subscribe(response => {
       if (response !== null) {
         console.log('Usuario editado:', response);
-        
+        // Cerrar la ventana de diálogo solo si la edición se realizó correctamente
+        this.dialogRef.close(this.usuarioSeleccionado);
       } else {
         console.log('No se pudo editar el usuario');
       }
@@ -52,5 +57,27 @@ export class EditarUsuarioComponent implements OnInit {
     window.location.reload();
     this.dialogRef.close(this.usuarioSeleccionado);
   }
+    
+
+  borrarUsuario(): void {
+  // Verificar si usuarioSeleccionado.id_usuario no es undefined
+  if (this.usuarioSeleccionado.id_usuario !== undefined) {
+    const confirmacion = confirm('¿Estás seguro de que deseas eliminar este usuario?');
+    if (confirmacion) {
+      // Llamar a la función borrarUsuario del servicio con el ID del usuario
+      this.catalogosService.borrarUsuario(this.usuarioSeleccionado.id_usuario).subscribe(
+        response => {
+          console.log('Usuario eliminado:', response);
+        },
+        error => {
+          console.error('Error al eliminar usuario:', error);
+        }
+      );
+    }
+  } else {
+    console.error('ID de usuario indefinido');
+  }
+  window.location.reload();
+  this.dialogRef.close(this.usuarioSeleccionado);}
 
 }

@@ -1,64 +1,64 @@
 <a routerLink="/inicio">
   <img src="../../../assets/images/home.png" alt="inicio" style="position: absolute; top: 10px; left: 10px; width: 30px; height: auto; object-fit: cover;">
 </a>
-<section class="">
-  <div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: hsl(0, 3%, 62%)">
-    <div class="container">
-      <div class="row gx-lg-5 align-items-center">
-        <div class="col-lg-6 mb-5 mb-lg-0">
-          <h1 class="my-5 display-3 fw-bold ls-tight">
-            Clinica Medica <br />
-            <span class="text-primary">Family Health</span>
-          </h1>
-          <p style="color: hsl(180, 14%, 99%)">
-            Registrese e interactue de manera mas sencilla y virtual con nuestros servicios
-          </p>
-        </div>
 
-        <div class="col-lg-6 mb-5 mb-lg-0">
-          <div class="card">
-            <div class="card-body py-5 px-md-5">
-              <form [formGroup]="loginForm" style="width: 23rem;">
+<!-- Establecer la imagen como fondo -->
+<div class="container-fluid d-flex justify-content-center align-items-center vh-100" style="background-image: url('../../../assets/images/2.jpg'); background-size: cover; background-position: center;">
 
-                <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">registrarse</h3>
+  <!-- Contenedor del contenido con fondo blanco -->
+  <div class="col-lg-4 mb-4 mb-lg-0">
+    <div class="card">
+      <div class="card-body py-2 px-md-4">
 
-                <div data-mdb-input-init class="form-outline mb-4">
-                  <div class="input-group">
-                    <span class="input-group-text"><i class="fa fa-user"></i></span>
-                    <input formControlName="nombre" type="text" id="nombreLogin" class="form-control form-control-lg" placeholder="nombre y apellido"/>
-                  </div>
-                </div>
-
-                <div data-mdb-input-init class="form-outline mb-4">
-                  <div class="input-group">
-                    <span class="input-group-text"><i class="fa fa-user"></i></span>
-                    <input formControlName="email" type="email" id="correoLogin" class="form-control form-control-lg" placeholder="Correo Electronico"/>
-                  </div>
-                </div>
-
-
-                <div data-mdb-input-init class="form-outline mb-4">
-                  <div class="input-group">
-                    <span class="input-group-text"><i class="fa fa-lock"></i></span>
-                    <input formControlName="contrasenia" [type]="tipo" id="contraLogin" class="form-control form-control-lg" placeholder="Contraseña"/>
-                    <span (click)="mostrarContra()" class="input-group-text"><i class="fa {{icono}}"></i></span>
-                  </div>
-                </div>
-
-                <div class="pt-1 mb-4">
-                  <button (click)="onSubmit()" data-mdb-button-init data-mdb-ripple-init 
-                  class="btn btn-primary btn-lg btn-block custom-color" 
-                  type="button">registrarse</button>
-                </div>
-
-                <p class="small mb-5 pb-lg-2"><a class="text-muted" href="#!"></a></p>
-                <p>ya tiene cuenta? <a routerLink="/login">inicie sesion</a></p>
-
-              </form>
+        <!-- Contenido -->
+        <div class="row gx-5 align-items-center">
+          <div class="col-12 text-center mb-4">
+            <div class="title-container">
+              <img src="../../../assets/images/Logos/1.png" alt="Nombre de la Clínica" style="max-width: 100%; height: auto;">
             </div>
+            <hr class="my-4"> <!-- Línea horizontal -->
+          </div>
+
+          <div class="col-lg-12 mb-4 text-center">
+            <p style="color: hsl(0, 0%, 0%)">
+              Regístrese e interactúe de manera más sencilla y virtual con nuestros servicios
+            </p>
+          </div>
+
+          <div class="col-lg-12 mb-4">
+            <form [formGroup]="loginForm" style="width: 23rem;" class="mx-auto">
+              <div data-mdb-input-init class="form-outline mb-4">
+                <div class="input-group">
+                  <span class="input-group-text"><i class="fa fa-user"></i></span>
+                  <input formControlName="nombre" type="text" id="nombreLogin" class="form-control form-control-lg" placeholder="Nombre y apellido"/>
+                </div>
+              </div>
+
+              <div data-mdb-input-init class="form-outline mb-4">
+                <div class="input-group">
+                  <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                  <input formControlName="email" type="email" id="correoLogin" class="form-control form-control-lg" placeholder="Correo Electrónico"/>
+                </div>
+              </div>
+
+              <div data-mdb-input-init class="form-outline mb-4">
+                <div class="input-group">
+                  <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                  <input formControlName="contrasenia" [type]="tipo" id="contraLogin" class="form-control form-control-lg" placeholder="Contraseña"/>
+                  <span (click)="mostrarContra()" class="input-group-text"><i class="fa {{icono}}"></i></span>
+                </div>
+              </div>
+
+              <div class="pt-1 mb-4 text-center">
+                <button (click)="onSubmit()" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg btn-block custom-color" type="button">Registrarse</button>
+              </div>
+
+              <p class="small mb-5 pb-lg-2"><a class="text-muted" href="#!"></a></p>
+              <p class = "text-center">¿Ya tiene cuenta? <a routerLink="/login">Inicie sesión</a></p>
+            </form>
           </div>
         </div>
       </div>
     </div>
   </div>
-</section>
+</div>
