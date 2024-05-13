@@ -113,16 +113,16 @@
     background-color: #4CAF50; /* Color de fondo */
     border: none; /* Sin borde */
     color: white; /* Color del texto */
-    padding: 12px 24px; /* Espaciado interno */
     text-align: center; /* Alineación del texto */
     text-decoration: none; /* Sin subrayado */
     display: inline-block; /* Mostrar como elemento de línea */
-    font-size: 16px; /* Tamaño del texto */
-    margin: 4px 2px; /* Margen exterior */
     transition-duration: 0.4s; /* Duración de la transición */
     cursor: pointer; /* Cursor de puntero al pasar */
     border-radius: 12px; /* Borde redondeado */
     border: 2px solid transparent; /* Borde transparente */
+    padding: 8px 16px; /* Reducir el espaciado interno */
+    font-size: 14px; /* Reducir el tamaño del texto */
+    margin: 4px; /* Reducir el margen exterior */
   }
   
   .btn-add-user:hover {

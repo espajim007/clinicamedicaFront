@@ -19,20 +19,22 @@
       <label>Email:</label>
       <input type="email" class="form-control" name="email" [(ngModel)]="usuarioSeleccionado.email">
     </div>
-    <div class="form-group">
-      <label>Estado:</label>
-      <select class="form-control" name="estado" [(ngModel)]="usuarioSeleccionado.estado">
-        <option [value]="true">Activo</option>
-        <option [value]="false">Inactivo</option>
-      </select>
-    </div>    
-    <!-- Botón para borrar el usuario -->
-    <button type="button" class="btn btn-danger" (click)="borrarUsuario()">Borrar Usuario</button>
-
-    <div style="display: inline-block; width: 3rem;"></div>
-
-    <!-- Botón para guardar cambios -->
-    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+  
+    <div class="button-container">
+      <!-- Botón para cambiar de estado el usuario -->
+      <button type="button" 
+              class="btn" 
+              [ngClass]="{ 'btn-danger': usuarioSeleccionado.estado === true, 'btn-success': usuarioSeleccionado.estado === false }" 
+              (click)="borrarUsuario()">
+          {{ usuarioSeleccionado.estado === true ? 'Desactivar Usuario' : 'Activar Usuario' }}
+      </button>
+  
+      <!-- Espacio entre los botones -->
+      <div style="width: 1rem;"></div>
+  
+      <!-- Botón para guardar cambios -->
+      <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+  </div>
   </form>
 </div>
 

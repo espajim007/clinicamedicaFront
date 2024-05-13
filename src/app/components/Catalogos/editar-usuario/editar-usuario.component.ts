@@ -36,8 +36,6 @@ export class EditarUsuarioComponent implements OnInit {
 
   
   guardarCambios(): void {
-    // Verificar y configurar el valor de estado correctamente
-    this.usuarioSeleccionado.estado = this.usuarioSeleccionado.estado ? true : false;
 
     console.log(this.usuarioSeleccionado);
     this.catalogosService.editarUsuarios(this.usuarioSeleccionado).pipe(
@@ -62,10 +60,10 @@ export class EditarUsuarioComponent implements OnInit {
   borrarUsuario(): void {
   // Verificar si usuarioSeleccionado.id_usuario no es undefined
   if (this.usuarioSeleccionado.id_usuario !== undefined) {
-    const confirmacion = confirm('¿Estás seguro de que deseas eliminar este usuario?');
+    const confirmacion = confirm('¿Estás seguro de que deseas cambiar el estado de este usuario?');
     if (confirmacion) {
       // Llamar a la función borrarUsuario del servicio con el ID del usuario
-      this.catalogosService.borrarUsuario(this.usuarioSeleccionado.id_usuario).subscribe(
+      this.catalogosService.canbiarEstadoUsuario(this.usuarioSeleccionado.id_usuario).subscribe(
         response => {
           console.log('Usuario eliminado:', response);
         },

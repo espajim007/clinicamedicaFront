@@ -23,9 +23,7 @@ export class CatalogosService {
   getRoles() {
     return this.http.get<rol[]>(`${this.baseUrl}catalogos/roles`); 
   }
-  
-
-  borrarUsuario(idUsuario: number): Observable<any> {
-    return this.http.delete<any>(`${this.baseUrl}catalogos/eliminar-usuario/${idUsuario}`);
+  canbiarEstadoUsuario(idUsuario: number): Observable<any> {
+    return this.http.delete<any>(`${this.baseUrl}catalogos/cambio-estado-usuario/${idUsuario}`);
   }
 }

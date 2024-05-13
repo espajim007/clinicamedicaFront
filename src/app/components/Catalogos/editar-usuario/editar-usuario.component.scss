@@ -77,3 +77,7 @@
   }
   
   
+  .button-container {
+    display: flex;
+    justify-content: space-between; /* Alinea los elementos a lo largo del contenedor con un espacio uniforme entre ellos */
+}
