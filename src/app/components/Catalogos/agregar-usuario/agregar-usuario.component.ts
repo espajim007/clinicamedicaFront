@@ -13,8 +13,8 @@ export class AgregarUsuarioComponent {
     nombre: '',
     email: '',
     contrasenia: '',
-    id_rol: 2, // Debes inicializarlo según lo necesites
-    estado: true // Debes inicializarlo según lo necesites
+    id_rol: 2, 
+    estado: true 
   };
   roles: rol[] = [];
 
