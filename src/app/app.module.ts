@@ -69,6 +69,7 @@ import { OcupacionComponent } from './components/Catalogos/ocupacion/ocupacion/o
 import { EditarTipoSangreComponent } from './components/Catalogos/tipo-sangre/editar-tipo-sangre/editar-tipo-sangre.component';
 import { AgregarTipoSangreComponent } from './components/Catalogos/tipo-sangre/agregar-tipo-sangre/agregar-tipo-sangre.component';
 import { TipoSangreComponent } from './components/Catalogos/tipo-sangre/tipo-sangre/tipo-sangre.component';
+import { NavigationComponent } from './navigation/navigation.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -132,7 +133,8 @@ import { TipoSangreComponent } from './components/Catalogos/tipo-sangre/tipo-san
     OcupacionComponent,
     EditarTipoSangreComponent,
     AgregarTipoSangreComponent,
-    TipoSangreComponent
+    TipoSangreComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,

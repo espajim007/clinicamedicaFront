@@ -1,130 +1,63 @@
 <div class="container-fluid">
   <div class="row flex-nowrap">
-      <div class="col-auto col-md-1 col-xl-1 px-sm-2 px-0 bg-dark">
-          <!-- Menú lateral -->
-          <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100 text-center">
-              <a class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                  <span class="fs-4 d-none d-sm-inline">Menú Principal</span>
-              </a>
-              
-              <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-                  <li class="nav-item dropdown">
-                    <a class="nav-link align-middle px-0 dropdown-toggle d-flex flex-column align-items-center" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      <img src="../../../../assets/images/Logos/catalogo.png" alt="Catalogo" class="imagen-custom" width="50" height="50">
-                      <span style="font-size: 20px; font-family: Georgia, serif;">Catálogo</span>
-                  </a>
-                                         
-                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <li>
-                              <a routerLink="/menu" class="dropdown-item ">
-                                  <img src="../../../../assets/images/Logos/devolver.png" alt="Inicio" class="imagen-custom" width="50" height="50">
-                                  <span style="font-size: 15px; font-family: Georgia, serif;">Inicio</span>
-                              </a>
-                          </li>
-                          <li>
-                              <a routerLink="/usuarios" class="dropdown-item ">
-                                  <img src="../../../../assets/images/Logos/CatalogoUsuario.png" alt="Usuarios" class="imagen-custom" width="50" height="50">
-                                  <span style="font-size: 15px; font-family: Georgia, serif;">Usuario</span>
-                              </a>
-                          </li>
-                          <li>
-                              <a routerLink="/menu" class="dropdown-item ">
-                                  <img src="../../../../assets/images/Logos/datos.png" alt="Datos Personales" class="imagen-custom" width="50" height="50">
-                                  <span style="font-size: 15px; font-family: Georgia, serif;">Datos Personales</span>
-                              </a>
-                          </li>
-                          <li>
-                              <a routerLink="/menu" class="dropdown-item ">
-                                  <img src="../../../../assets/images/Logos/citas.png" alt="Citas" class="imagen-custom" width="50" height="50">
-                                  <span style="font-size: 15px; font-family: Georgia, serif;">Citas</span>
-                              </a>
-                          </li>
-                          <li>
-                              <a routerLink="/menu" class="dropdown-item ">
-                                  <img src="../../../../assets/images/Logos/facturacion.png" alt="Facturacion" class="imagen-custom" width="50" height="50">
-                                  <span style="font-size: 15px; font-family: Georgia, serif;">Facturacion</span>
-                              </a>
-                          </li>
-                          <li>
-                              <a routerLink="/menu" class="dropdown-item ">
-                                  <img src="../../../../assets/images/Logos/dia.png" alt="Diagnostico" class="imagen-custom" width="50" height="50">
-                                  <span style="font-size: 15px; font-family: Georgia, serif;">Diagnostico</span>
-                              </a>
-                          </li>
-                          <li>
-                              <a routerLink="/menu" class="dropdown-item r">
-                                  <img src="../../../../assets/images/Logos/re.png" alt="Receta" class="imagen-custom" width="50" height="50">
-                                  <span style="font-size: 15px; font-family: Georgia, serif;">Receta</span>
-                              </a>
-                          </li>
-                          <li>
-                            <a routerLink="/inicio" class="dropdown-item ">
-                                <img src="../../../../assets/images/Logos/salida.png" alt="Inicio" class="imagen-custom" width="50" height="50">
-                                <span style="font-size: 15px; font-family: Georgia, serif;">Salir</span>
-                            </a>
-                        </li>
-                      </ul>
-                  </li>
-              </ul>
-              
-              <hr>
-              <div class="dropdown pb-4">
-                  <span class="d-none d-sm-inline mx-1"></span>
+    <!-- Columna para la navegación -->
+    <div class="col-auto ">
+      <app-navigation></app-navigation>
+    </div>
+    <!-- Columna para el contenido principal -->
+    <div class="col py-3">
+      <div class="container mt-5">
+        <div class="row justify-content-center">
+          <div class="col-md-12">
+            <div class="card" style="width: 100%; height: auto;">
+              <div class="card-header">
+                Lista de Usuarios
               </div>
-          </div>
-      </div>
-
-  <div class="container mt-5">
-    <div class="row justify-content-center">
-      <div class="col-md-12">
-        <div class="card" style="width: 1300px; height: 300px;">
-          <div class="card-header">
-            Lista de Usuarios
-          </div>
-          <div class="card-body">
-            <div class="table-responsive">
-              <table class="table table-bordered table-hover">
-                <thead class="thead-dark">
-                  <tr>
-                    <th>ID Usuario</th>
-                    <th>Rol</th>
-                    <th>Nombre</th>
-                    <th>Email</th>
-                    <th>Contraseña</th>
-                    <th>Estado</th>
-                    <th>Editar</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <!-- Aquí se genera la lista de usuarios -->
-                  <!-- Usé *ngFor para iterar sobre los usuarios -->
-                  <tr *ngFor="let usuario of usuarios | paginate: { itemsPerPage: 5, currentPage: page }">
-                    <td>{{ usuario.id_usuario }}</td>
-                    <td>{{ getRolNombre(usuario.id_rol ?? 0) }}</td>
-                    <td>{{ usuario.nombre }}</td>
-                    <td>{{ usuario.email }}</td>
-                    <td>{{ usuario.contrasenia}}</td>
-                    <td>{{ usuario.estado ? 'Activo' : 'Inactivo' }}</td>
-                    <td>
-                        <button class="btn btn-outline-primary btn-sm" (click)="abrirModalEditar(usuario)">
-                            <i class="fas fa-pencil-alt"></i> 
-                        </button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <!-- Div para alinear horizontalmente los controles de paginación y el botón -->
-            <div class="d-flex justify-content-between align-items-center"> 
-              <!-- Controles de paginación -->
-              <pagination-controls (pageChange)="page = $event" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
-              <!-- Botón "Añadir usuario" -->
-              <button class="btn btn-add-user" (click)="abrirModalAgregarUsuario()">Añadir usuario</button>
-
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table table-bordered table-hover">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th>ID Usuario</th>
+                        <th>Rol</th>
+                        <th>Nombre</th>
+                        <th>Email</th>
+                        <th>Contraseña</th>
+                        <th>Estado</th>
+                        <th>Editar</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- Aquí se genera la lista de usuarios -->
+                      <!-- Usé *ngFor para iterar sobre los usuarios -->
+                      <tr *ngFor="let usuario of usuarios | paginate: { itemsPerPage: 5, currentPage: page }">
+                        <td>{{ usuario.id_usuario }}</td>
+                        <td>{{ getRolNombre(usuario.id_rol ?? 0) }}</td>
+                        <td>{{ usuario.nombre }}</td>
+                        <td>{{ usuario.email }}</td>
+                        <td>{{ usuario.contrasenia }}</td>
+                        <td>{{ usuario.estado ? 'Activo' : 'Inactivo' }}</td>
+                        <td>
+                          <button class="btn btn-outline-primary btn-sm" (click)="abrirModalEditar(usuario)">
+                            <i class="fas fa-pencil-alt"></i>
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <!-- Div para alinear horizontalmente los controles de paginación y el botón -->
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                  <!-- Controles de paginación -->
+                  <pagination-controls (pageChange)="page = $event" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
+                  <!-- Botón "Añadir usuario" -->
+                  <button class="btn btn-primary" (click)="abrirModalAgregarUsuario()">Añadir usuario</button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-
+</div>

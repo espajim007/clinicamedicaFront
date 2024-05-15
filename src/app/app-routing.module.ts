@@ -34,6 +34,7 @@ const routes: Routes = [
   {path:'registrarse', component: RegistrarseComponent},
   {path:'menu', component: MenuComponent},
   {path:'menu-catalogos', component: MenuCatalogosComponent},
+  {path:'usuarios', component: UsuariosComponent},
   {path:'prueba', component: PruebaComponent},
   {path:'aseguradora', component: AseguradoraComponent},
   {path:'cita', component: CitaComponent},
