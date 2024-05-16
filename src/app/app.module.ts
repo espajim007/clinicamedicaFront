@@ -70,6 +70,8 @@ import { EditarTipoSangreComponent } from './components/Catalogos/tipo-sangre/ed
 import { AgregarTipoSangreComponent } from './components/Catalogos/tipo-sangre/agregar-tipo-sangre/agregar-tipo-sangre.component';
 import { TipoSangreComponent } from './components/Catalogos/tipo-sangre/tipo-sangre/tipo-sangre.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { DatosPersonalesComponent } from './components/Catalogos/datos-personales/datos-personales.component';
+import { TablasCatalogoComponent } from './components/Catalogos/tablas-catalogo/tablas-catalogo.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -134,7 +136,9 @@ import { NavigationComponent } from './navigation/navigation.component';
     EditarTipoSangreComponent,
     AgregarTipoSangreComponent,
     TipoSangreComponent,
-    NavigationComponent
+    NavigationComponent,
+    DatosPersonalesComponent,
+    TablasCatalogoComponent
   ],
   imports: [
     BrowserModule,

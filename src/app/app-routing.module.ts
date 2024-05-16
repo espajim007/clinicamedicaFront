@@ -25,6 +25,8 @@ import { MedicoEspecialidadComponent } from './components/Catalogos/medico-espec
 import { MunicipioComponent } from './components/Catalogos/municipio/municipio/municipio.component';
 import { OcupacionComponent } from './components/Catalogos/ocupacion/ocupacion/ocupacion.component';
 import { TipoSangreComponent } from './components/Catalogos/tipo-sangre/tipo-sangre/tipo-sangre.component';
+import { DatosPersonalesComponent } from './components/Catalogos/datos-personales/datos-personales.component';
+import { TablasCatalogoComponent } from './components/Catalogos/tablas-catalogo/tablas-catalogo.component';
 
 
 const routes: Routes = [
@@ -52,7 +54,9 @@ const routes: Routes = [
   {path:'medico-especialidad', component: MedicoEspecialidadComponent},
   {path:'municipio', component: MunicipioComponent},
   {path:'ocupacion', component: OcupacionComponent},
-  {path:'tipo-sangre', component: TipoSangreComponent}
+  {path:'tipo-sangre', component: TipoSangreComponent},
+  {path:'datos-personales', component: DatosPersonalesComponent},
+  {path:'tablas-catalogo', component: TablasCatalogoComponent}
  ];
 
 @NgModule({

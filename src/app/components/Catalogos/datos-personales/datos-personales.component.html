@@ -1,0 +1,58 @@
+<div class="container-fluid d-flex justify-content-center align-items-center vh-100" style="background-image: url('../../../assets/images/2.jpg'); background-size: cover; background-position: center;">
+    <div class="container-fluid">
+        <div class="row flex-nowrap">
+            <div class="col-auto">
+                <app-navigation></app-navigation>
+            </div>
+            <div class="col py-3 d-flex justify-content-center align-items-center">
+                <style>
+                    .content-area {
+                        display: flex;
+                        justify-content: space-around;
+                        align-items: center;
+                    }
+                    .dropdown-item {
+                        text-align: center;
+                        text-decoration: none;
+                        color: black;
+                        margin: 0 70px;
+                    }
+                    .imagen-custom {
+                        display: block;
+                        margin: 0 auto;
+                    }
+                    .imagen-custom img {
+                        width: 250px;
+                        height: 250px;
+                    }
+                    .imagen-custom span {
+                        display: block;
+                        margin-top: 10px;
+                        font-size: 15px;
+                        font-family: Georgia, serif;
+                    }
+                </style>
+                <div class="content-area">
+                    <a href="/ficha-paciente" class="dropdown-item">
+                        <div class ="imagen-custom ">
+                            <img src="../../../../assets/images/Logos/pa.png" alt="Paciente">
+                        </div>
+                        <span style="font-size: 20px; font-family: 'Courier New', Courier, monospace;">Paciente</span>
+                    </a>
+                    <a href="/empleado" class="dropdown-item">
+                        <div class ="imagen-custom">
+                            <img src="../../../../assets/images/Logos/pe.png" alt="Empleados">
+                        </div>
+                        <span style="font-size: 20px; font-family: 'Courier New', Courier, monospace;">Empleados</span>
+                    </a>
+                    <a href="/tablas-catalogo" class="dropdown-item">
+                        <div class ="imagen-custom">
+                            <img src="../../../../assets/images/Logos/catalogar.png" alt="Catalogo">
+                        </div>
+                        <span style="font-size: 20px; font-family: 'Courier New', Courier, monospace;">Tablas<br>Catálago</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
