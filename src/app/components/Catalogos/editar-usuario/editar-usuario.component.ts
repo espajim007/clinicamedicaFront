@@ -76,6 +76,11 @@ export class EditarUsuarioComponent implements OnInit {
     console.error('ID de usuario indefinido');
   }
   window.location.reload();
-  this.dialogRef.close(this.usuarioSeleccionado);}
+  this.dialogRef.close(this.usuarioSeleccionado);
+}
 
+
+  cerrarModal(): void {
+    this.dialogRef.close();
+  }
 }

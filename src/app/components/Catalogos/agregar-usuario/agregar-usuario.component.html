@@ -1,24 +1,22 @@
-<!-- agregar-usuario.component.html -->
-
 <h2>Agregar Nuevo Usuario</h2>
 <div class="modal-header">
-    <button type="button" class="close" aria-label="Close" (click)="cerrarModal()">
-        <span aria-hidden="true">&times;</span>
-    </button>
+  <button type="button" class="close" aria-label="Close" (click)="cerrarModal()" style="position: absolute; top: 0; right: 0;">
+    <span aria-hidden="true"><i class="fas fa-times"></i></span>
+</button>
 </div>
 <div class="modal-body">
-  <form>
+  <form (ngSubmit)="guardarNuevoUsuario()" #agregarForm="ngForm">
     <div class="form-group">
       <label for="nombre">Nombre:</label>
-      <input type="text" class="form-control" id="nombre" [(ngModel)]="nuevoUsuario.nombre" name="nombre">
+      <input type="text" class="form-control" id="nombre" [(ngModel)]="nuevoUsuario.nombre" name="nombre" required>
     </div>
     <div class="form-group">
       <label for="email">Email:</label>
-      <input type="email" class="form-control" id="email" [(ngModel)]="nuevoUsuario.email" name="email">
+      <input type="email" class="form-control" id="email" [(ngModel)]="nuevoUsuario.email" name="email" required>
     </div>
     <div class="form-group">
         <label for="email">Contraseña:</label>
-        <input type="password" class="form-control" id="contrasenia" [(ngModel)]="nuevoUsuario.contrasenia" name="contrasenia">
+        <input type="password" class="form-control" id="contrasenia" [(ngModel)]="nuevoUsuario.contrasenia" name="contrasenia" required>
       </div>
     <div class="form-group">
       <label for="rol">Rol:</label>
@@ -26,6 +24,6 @@
         <option *ngFor="let rol of roles" [value]="rol.id_rol">{{ rol.nombre }}</option>
       </select>
     </div>
-    <button type="button" class="btn btn-primary" (click)="guardarNuevoUsuario()">Guardar</button>
+    <button type="button" class="btn btn-primary" (click)="guardarNuevoUsuario()" [disabled]="agregarForm.invalid">Guardar</button>
   </form>
 </div>

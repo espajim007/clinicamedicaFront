@@ -1,1 +1,19 @@
-<p>agregar-estado-cita works!</p>
+<div class="container mt-5 position-relative">
+    <h2>Agregar Nuevo Estado Cita</h2>
+    <div class="modal-header">
+    <button type="button" class="close" aria-label="Close" (click)="cerrarModal()" style="position: absolute; top: 0; right: 0;">
+        <span aria-hidden="true"><i class="fas fa-times"></i></span>
+    </button>
+    </div>
+    <div class="modal-body">
+    <form (ngSubmit)="guardarNuevo()" #agregarForm="ngForm">
+        <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" class="form-control" id="nombre" [(ngModel)]="nuevoEstado.nombre" name="nombre" required>
+        </div>
+        
+        <button type="button" class="btn btn-primary" (click)="guardarNuevo()"[disabled]="agregarForm.invalid">Guardar</button>
+    </form>
+    </div>
+</div>
+

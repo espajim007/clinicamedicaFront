@@ -1,1 +1,40 @@
-<p>editar-aseguradora works!</p>
+<div class="container mt-5 position-relative">
+    <h2>Aseguradora</h2>
+    <!-- Botón de cerrar modal -->
+    <button type="button" class="close" aria-label="Close" (click)="cerrarModal()" style="position: absolute; top: 0; right: 0;">
+        <span aria-hidden="true"><i class="fas fa-times"></i></span>
+    </button>
+    <form (ngSubmit)="guardarCambios()" #editarForm="ngForm">
+        <div class="form-group">
+            <label>ID :</label>
+            <input type="text" class="form-control" name="id" [(ngModel)]="aseguradoraSeleccionada.id_aseguradora" disabled>
+        </div>
+        <div class="form-group">
+            <label>Nombre:</label>
+            <input type="text" class="form-control" name="nombre" [(ngModel)]="aseguradoraSeleccionada.nombre" required>
+        </div>
+
+        <div class="form-group">
+            <label>Copago:</label>
+            <input type="text" class="form-control" name="copago" [(ngModel)]="aseguradoraSeleccionada.copago" required>
+        </div>
+
+        <div class="form-group">
+            <label>Telefono:</label>
+            <input type="text" class="form-control" name="telefono" [(ngModel)]="aseguradoraSeleccionada.telefono" required>
+        </div>
+
+        <div class="form-group">
+            <label>Correo:</label>
+            <input type="text" class="form-control" name="correo" [(ngModel)]="aseguradoraSeleccionada.correo" required>
+        </div>
+
+        <div class="button-container">
+            <!-- Espacio entre los botones -->
+            <div style="width: 1rem;"></div>
+
+            <!-- Botón para guardar cambios -->
+            <button type="submit" class="btn btn-primary" [disabled]="editarForm.invalid">Guardar Cambios</button>
+        </div>
+    </form>
+</div>

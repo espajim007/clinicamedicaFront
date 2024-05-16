@@ -3,5 +3,5 @@ export interface aseguradora {
     nombre?: string;
     copago?: number;
     telefono?: number;
-    Correo?: string;
+    correo?: string;
   }
