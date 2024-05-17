@@ -10,6 +10,10 @@ import { ocupacion } from '../models/ocupacion.interface';
 import { tipoSangre } from '../models/tipoSangre.interface';
 import { departamento } from '../models/departamento.interface';
 import { municipio } from '../models/municipio.interface';
+import { especialidad } from '../models/especialidad.interface';
+import { aseguradora } from '../models/aseguradora.interface';
+import { medicoEspecialidad } from '../models/medicoEspecialidad.interface';
+import { direccion } from '../models/direccion.interface';
 @Injectable({
   providedIn: 'root'
 })
@@ -83,7 +87,7 @@ export class CatalogosService {
   }
   // aseguradora
   getAseguradora() {
-    return this.http.get<ocupacion[]>(`${this.baseUrl}catalogos/aseguradora`); 
+    return this.http.get<aseguradora[]>(`${this.baseUrl}catalogos/aseguradora`); 
   }
   editarAseguradora(datos: any){
     return this.http.post<any>(`${this.baseUrl}catalogos/editar-aseguradora`, datos);
@@ -93,7 +97,7 @@ export class CatalogosService {
   }
     // especialidad
   getEspecialidad() {
-    return this.http.get<ocupacion[]>(`${this.baseUrl}catalogos/especialidad`); 
+    return this.http.get<especialidad[]>(`${this.baseUrl}catalogos/especialidad`); 
   }
   editarEspecialidad(datos: any){
     return this.http.post<any>(`${this.baseUrl}catalogos/editar-especialidad`, datos);
@@ -101,5 +105,26 @@ export class CatalogosService {
   agregarEspecialidad(datos: any){
     return this.http.post<any>(`${this.baseUrl}catalogos/nueva-especialidad`, datos);
   }
+  // medicoEspecialidad
+  getMedicoEspecialidad() {
+    return this.http.get<medicoEspecialidad[]>(`${this.baseUrl}catalogos/medico-especialidad`); 
+  }
+  editarMedicoEspecialidad(datos: any){
+    return this.http.post<any>(`${this.baseUrl}catalogos/editar-medico-especialidad`, datos);
+  }
+  agregarMedicoEspecialidad(datos: any){
+    return this.http.post<any>(`${this.baseUrl}catalogos/nueva-medico-especialidad`, datos);
+  }
+    // direccion
+    getDireccion() {
+      return this.http.get<direccion[]>(`${this.baseUrl}catalogos/direccion`); 
+    }
+    editarDireccion(datos: any){
+      return this.http.post<any>(`${this.baseUrl}catalogos/editar-direccion`, datos);
+    }
+    agregarDireccion(datos: any){
+      return this.http.post<any>(`${this.baseUrl}catalogos/nueva-direccion`, datos);
+    }
+
 
 }

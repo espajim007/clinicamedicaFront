@@ -1,1 +1,70 @@
-<p>direccion works!</p>
+<div class="container-fluid d-flex justify-content-center align-items-center vh-100" style="background-image: url('../../../assets/images/2.jpg'); background-size: cover; background-position: center;">
+    <div class="container-fluid">
+      <div class="row flex-nowrap">
+        <!-- Columna para la navegación -->
+        <div class="col-auto ">
+          <app-navigation></app-navigation>
+        </div>
+        <!-- Columna para el contenido principal -->
+        <div class="col py-3">
+          <div class="container mt-5">
+            <div class="row justify-content-center">
+              <div class="col-md-12">
+                <div class="card" style="width: 100%; height: auto;">
+                  <div class="card-header">
+                    Lista de direcciones
+                  </div>
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table class="table table-bordered table-hover">
+                        <thead class="thead-dark">
+                          <tr>
+                            <th>ID</th>
+                            <th>Municipio</th>
+                            <th>Calle</th>
+                            <th>Avenida</th>
+                            <th>Zona o Barrio</th>
+                            <th>Residencial o colonia</th>
+                            <th>No. Vivienda</th>
+                            <th>indicacion Extra</th>
+                            <th>Editar</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <!-- Aquí se genera la lista de usuarios -->
+                          <!-- Usé *ngFor para iterar sobre los usuarios -->
+                          <tr *ngFor="let direccion of direcciones | paginate: { itemsPerPage: 5, currentPage: page }">
+                            <td>{{ direccion.id_direccion }}</td>
+                            <td>{{ getMunicipio(direccion.id_municipio ?? 0) }}</td>
+                            <td>{{ direccion.calle}}</td>
+                            <td>{{ direccion.avenida }}</td>
+                            <td>{{ direccion.zona_barrio }}</td>
+                            <td>{{ direccion.residencial_colonia }}</td>
+                            <td>{{ direccion.numero_vivienda }}</td>
+                            <td>{{ direccion.indicacion_extra}}</td>
+                            <td>
+                              <button class="btn btn-outline-primary btn-sm" (click)="abrirModalEditar(direccion)">
+                                <i class="fas fa-pencil-alt"></i>
+                              </button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <!-- Div para alinear horizontalmente los controles de paginación y el botón -->
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                      <!-- Controles de paginación -->
+                      <pagination-controls (pageChange)="page = $event" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
+                      <!-- Botón "Añadir" -->
+                      <button class="btn btn-primary" (click)="abrirModalAgregar()">Añadir direccion</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    
