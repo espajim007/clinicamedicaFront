@@ -27,6 +27,12 @@ import { OcupacionComponent } from './components/Catalogos/ocupacion/ocupacion/o
 import { TipoSangreComponent } from './components/Catalogos/tipo-sangre/tipo-sangre/tipo-sangre.component';
 import { DatosPersonalesComponent } from './components/Catalogos/datos-personales/datos-personales.component';
 import { TablasCatalogoComponent } from './components/Catalogos/tablas-catalogo/tablas-catalogo.component';
+import { PacienteComponent } from './components/Catalogos/paciente/paciente.component';
+import { PersonalClinicaComponent } from './components/Catalogos/personal-clinica/personal-clinica.component';
+import { MedicoClinicaComponent } from './components/Catalogos/medico-clinica/medico-clinica.component';
+import { CitaMenuComponent } from './components/Catalogos/cita-menu/cita-menu.component';
+import { PuestoComponent } from './components/Catalogos/puesto/puesto/puesto.component';
+import { EmpleadoClinicaComponent } from './components/Catalogos/empleado-clinica/empleado-clinica.component';
 
 
 const routes: Routes = [
@@ -56,7 +62,13 @@ const routes: Routes = [
   {path:'ocupacion', component: OcupacionComponent},
   {path:'tipo-sangre', component: TipoSangreComponent},
   {path:'datos-personales', component: DatosPersonalesComponent},
-  {path:'tablas-catalogo', component: TablasCatalogoComponent}
+  {path:'tablas-catalogo', component: TablasCatalogoComponent},
+  {path:'paciente', component: PacienteComponent},
+  {path:'personal-clinica', component: PersonalClinicaComponent},
+  {path:'medico-clinica', component: MedicoClinicaComponent},
+  {path:'cita-menu', component: CitaMenuComponent},
+  {path:'puesto', component: PuestoComponent},
+  {path:'empleado-clinica', component: EmpleadoClinicaComponent},
  ];
 
 @NgModule({

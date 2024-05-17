@@ -72,6 +72,14 @@ import { TipoSangreComponent } from './components/Catalogos/tipo-sangre/tipo-san
 import { NavigationComponent } from './navigation/navigation.component';
 import { DatosPersonalesComponent } from './components/Catalogos/datos-personales/datos-personales.component';
 import { TablasCatalogoComponent } from './components/Catalogos/tablas-catalogo/tablas-catalogo.component';
+import { EmpleadoClinicaComponent } from './components/Catalogos/empleado-clinica/empleado-clinica.component';
+import { MedicoClinicaComponent } from './components/Catalogos/medico-clinica/medico-clinica.component';
+import { PacienteComponent } from './components/Catalogos/paciente/paciente.component';
+import { PersonalClinicaComponent } from './components/Catalogos/personal-clinica/personal-clinica.component';
+import { CitaMenuComponent } from './components/Catalogos/cita-menu/cita-menu.component';
+import { AgregarPuestoComponent } from './components/Catalogos/puesto/agregar-puesto/agregar-puesto.component';
+import { EditarPuestoComponent } from './components/Catalogos/puesto/editar-puesto/editar-puesto.component';
+import { PuestoComponent } from './components/Catalogos/puesto/puesto/puesto.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -138,7 +146,15 @@ import { TablasCatalogoComponent } from './components/Catalogos/tablas-catalogo/
     TipoSangreComponent,
     NavigationComponent,
     DatosPersonalesComponent,
-    TablasCatalogoComponent
+    TablasCatalogoComponent,
+    EmpleadoClinicaComponent,
+    MedicoClinicaComponent,
+    PacienteComponent,
+    PersonalClinicaComponent,
+    CitaMenuComponent,
+    AgregarPuestoComponent,
+    EditarPuestoComponent,
+    PuestoComponent
   ],
   imports: [
     BrowserModule,
