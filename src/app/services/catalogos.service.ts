@@ -141,7 +141,7 @@ export class CatalogosService {
   }
       // RelacionPaciente
     getRelaciones() {
-    return this.http.get<relacionPaciente[]>(`${this.baseUrl}catalogos/contacto-emergencia`); 
+    return this.http.get<relacionPaciente[]>(`${this.baseUrl}catalogos/relacion-paciente`); 
   }
   editarRelacion(datos: any){
     return this.http.post<any>(`${this.baseUrl}catalogos/editar-relacion-paciente`, datos);

@@ -33,7 +33,7 @@ import { MedicoClinicaComponent } from './components/Catalogos/medico-clinica/me
 import { CitaMenuComponent } from './components/Catalogos/cita-menu/cita-menu.component';
 import { PuestoComponent } from './components/Catalogos/puesto/puesto/puesto.component';
 import { EmpleadoClinicaComponent } from './components/Catalogos/empleado-clinica/empleado-clinica.component';
-import { RelacionPacienteComponent } from './components/Catalogos/relacion-paciente/relacion-paciente.component';
+import { RelacionPacienteComponent } from './components/Catalogos/Relacion-pacientes/relacion-paciente/relacion-paciente.component'; 
 
 
 const routes: Routes = [
