@@ -1,1 +1,54 @@
-<p>editar-contacto-emergencia works!</p>
+<div class="container mt-5 position-relative modal-content">
+    <h2>Editar Direccion</h2>
+    <!-- Botón de cerrar modal -->
+    <button type="button" class="close" aria-label="Close" (click)="cerrarModal()" style="position: absolute; top: 0; right: 0;">
+      <span aria-hidden="true"><i class="fas fa-times"></i></span>
+    </button>
+    <div class="modal-body">
+        <form (ngSubmit)="guardarCambios()" #editarForm="ngForm">
+            <div class="form-group">
+                <label>ID:</label>
+                <input type="text" class="form-control" name="id" [(ngModel)]="ContactoSelecionado.id_contacto_emergencia" disabled>
+            </div>
+            <div class="form-group">
+                <label>Relacion:</label>
+                <select class="form-control" name="relacion" [(ngModel)]="ContactoSelecionado.id_relacion_paciente">
+                  <option *ngFor="let relacion of relaciones" [value]="relacion.id_relacion_paciente">{{relacion.relacion}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Genero:</label>
+                <select class="form-control" name="Genero" [(ngModel)]="ContactoSelecionado.id_genero">
+                  <option *ngFor="let Genero of generos" [value]="Genero.idgenero">{{Genero.genero}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Primer Nombre:</label>
+                <input type="text" class="form-control" name="pNombre" [(ngModel)]="ContactoSelecionado.primer_nombre" required>
+            </div>
+            <div class="form-group">
+                <label>Segundo Nombre:</label>
+                <input type="text" class="form-control" name="sNombre" [(ngModel)]="ContactoSelecionado.segundo_nombre" required>
+            </div>
+            <div class="form-group">
+                <label>Primer Apellido:</label>
+                <input type="text" class="form-control" name="pApellido" [(ngModel)]="ContactoSelecionado.primer_apellido" required>
+            </div>
+            <div class="form-group">
+                <label>Segundo Apellido:</label>
+                <input type="text" class="form-control" name="SApellido" [(ngModel)]="ContactoSelecionado.segundo_apellido" required>
+            </div>
+            <div class="form-group">
+                <label>Telefono:</label>
+                <input type="text" class="form-control" name="Telefono" [(ngModel)]="ContactoSelecionado.telefono" required>
+            </div>
+
+            <div class="button-container">
+                <!-- Espacio entre los botones -->
+                <div style="width: 1rem;"></div>
+                <!-- Botón para guardar cambios -->
+                <button type="submit" class="btn btn-primary" [disabled]="editarForm.invalid">Guardar Cambios</button>
+            </div>
+        </form>
+    </div>
+</div>

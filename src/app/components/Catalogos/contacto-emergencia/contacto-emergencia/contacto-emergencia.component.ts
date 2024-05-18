@@ -13,74 +13,79 @@ import { AgregarContactoEmergenciaComponent } from '../agregar-contacto-emergenc
 })
 export class ContactoEmergenciaComponent  {
 
-  // contactos: contactoEmergencia[] = [];
-  // relaciones: relacionPaciente[] = [];
-  // genero: genero[] = [];
-  // page: number = 1;
-  // direccionSeleccionado: direccion | null = null;
-  // Backup: direccion | null = null; // Variable para guardar la copia de respaldo del usuario
+  contactos: contactoEmergencia[] = [];
+  relaciones: relacionPaciente[] = [];
+  generos: genero[] = [];
+  page: number = 1;
+  direccionSeleccionado: contactoEmergencia | null = null;
+  Backup: contactoEmergencia | null = null; // Variable para guardar la copia de respaldo del usuario
   
 
   constructor(private catalogosService: CatalogosService, private dialog: MatDialog) { }
 
-  // ngOnInit(): void {
-  //   this.catalogosService.getDireccion().subscribe(
-  //     (data: direccion[]) => {
-  // //       this.direcciones = data;
-  //     },
-  //     error => {
-  //       console.error('Error al obtener direcciones:', error);
-  //     }
-  //   );
+  ngOnInit(): void {
+    this.catalogosService.getContacto().subscribe(
+      (data: contactoEmergencia[]) => {
+         this.contactos = data;
+      },
+      error => {
+        console.error('Error al obtener contactos:', error);
+      }
+    );
 
-  //   this.catalogosService.getMunicipio().subscribe(
-  //     (data: municipio[]) => {
-  //       this.municipios = data;
-  //     },
-  //     error => {
-  //       console.error('Error al obtener municipios:', error);
-  //     }
-  //   );
-  // }
+    this.catalogosService.getRelaciones().subscribe(
+      (data: relacionPaciente[]) => {
+        this.relaciones = data;
+      },
+      error => {
+        console.error('Error al obtener relaciones:', error);
+      }
+    );
+    this.catalogosService.getGenero().subscribe(
+      (data: genero[]) => {
+        this.generos = data;
+      },
+      error => {
+        console.error('Error al obtener generos:', error);
+      }
+    );
+  }
 
-  // abrirModalEditar(data: direccion): void {
-  //   // Guardar una copia de respaldo del usuario seleccionado
-  //   this.Backup = { ...data };
-  //   const dialogRef = this.dialog.open(EditarContactoEmergenciaComponent, {
-  //     width: '400px',
-  //     data: data
-  //   });
+  abrirModalEditar(data: contactoEmergencia): void {
+    // Guardar una copia de respaldo del usuario seleccionado
+    this.Backup = { ...data };
+    const dialogRef = this.dialog.open(EditarContactoEmergenciaComponent, {
+      width: '400px',
+      data: data
+    });
 
-  //   dialogRef.afterClosed().subscribe(result => {
-  //     if (result) {
-  //       const index = this.direcciones.findIndex(u => u.id_direccion === result.id_direccion);
-  //       if (index !== -1) {
-  //         this.direcciones[index] = result;
-  //       }
-  //     } else {
-  //       // Si se cancela la edición, restaurar la copia de respaldo del usuario
-  //       if (this.Backup) {
-  //         const index = this.direcciones.findIndex(u => u.id_direccion === this.Backup!.id_direccion);
-  //         if (index !== -1) {
-  //           this.direcciones[index] = this.Backup;
-  //         }
-  //       }
-  //     }
-  //     // Limpiar la copia de respaldo del usuario
-  //     this.Backup = null;
-  //   });
-  // }
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        const index = this.contactos.findIndex(u => u.id_contacto_emergencia === result.id_contacto_emergencia);
+        if (index !== -1) {
+          this.contactos[index] = result;
+        }
+      } else {
+        // Si se cancela la edición, restaurar la copia de respaldo del usuario
+        if (this.Backup) {
+          const index = this.contactos.findIndex(u => u.id_contacto_emergencia === this.Backup!.id_contacto_emergencia);
+          if (index !== -1) {
+            this.contactos[index] = this.Backup;
+          }
+        }
+      }
+      // Limpiar la copia de respaldo del usuario
+      this.Backup = null;
+    });
+  }
 
-  // getMunicipio(id: number): string {
-  //   const dato = this.municipios.find(dato => dato.id_municipio === id);
-  //   return dato?.nombre ?? '';
-  // }
-
-  // abrirModalAgregar(): void {
-  //   this.dialog.open(AgregarContactoEmergenciaComponent, {
-  //     width: '400px', // Ajusta el ancho según tus necesidades
-  //     disableClose: true // Opcional, para evitar que el usuario cierre el modal haciendo clic fuera de él
-  //   });
-  // }
+  getRelaciones(id: number): string {
+    const dato = this.relaciones.find(dato => dato.id_relacion_paciente === id);
+    return dato?.relacion ?? '';
+  }
+  GetGeneros(id: number): string {
+    const dato = this.generos.find(dato => dato.idgenero === id);
+    return dato?.genero ?? '';
+  }
 
 }
