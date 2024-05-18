@@ -22,108 +22,106 @@
                         margin: 0 auto;
                     }
                     .imagen-custom img {
-                        width: 150px;
-                        height: 150px;
+                        width: 100px;
+                        height: 100px;
+                    }
+                    .imagen-custom span {
+                        display: block;
+                        margin-top: 10px;
+                        font-size: 15px;
+                        font-family: Georgia, serif;
                     }
                     table, th, td {
                         border-collapse: collapse;
-                        padding: 50px;
+                        padding: 40px;
                         justify-content: center;
-                    }
-                    td {
-                        width: 100%;
                     }
                 </style>
                 <div class="content-area">
                     <table>
                     <tr>
                         <td>
-                        <div style="flex: 0 0 25%; max-width: 25%; padding: 0 15px;">
                             <a href="/aseguradora" class="dropdown-item">
                                 <div class="imagen-custom">
                                     <img src="../../../../assets/images/Logos/asegurado.png" alt="Paciente">
                                 </div>
                                 <span style="font-size: 20px; font-family: 'Courier New', Courier, monospace;"><b>Aseguradora</b></span>
                             </a>
-                        </div>
                         </td>
                         <td>
-                        <div style="flex: 0 0 25%; max-width: 25%; padding: 0 15px;">
                             <a href="/contacto-emergencia" class="dropdown-item">
                                 <div class="imagen-custom">
                                     <img src="../../../../assets/images/Logos/em.png" alt="Emergencia">
                                 </div>
                                 <span style="font-size: 20px; font-family: 'Courier New', Courier, monospace;"><b>Contacto Emergencia</b></span>
                             </a>
-                        </div>
                         </td>
                         <td>
-                        <div style="flex: 0 0 25%; max-width: 25%; padding: 0 15px;">
                             <a href="/departamento" class="dropdown-item">
                                 <div class="imagen-custom">
                                     <img src="../../../../assets/images/Logos/guatemala.png" alt="Departamento">
                                 </div>
                                 <span style="font-size: 20px; font-family: 'Courier New', Courier, monospace;"><b>Departamento</b></span>
                             </a>
-                        </div>
-                        </td>
-                        <td>
-                        <div style="flex: 0 0 25%; max-width: 25%; padding: 0 15px;">
-                            <a href="/direccion" class="dropdown-item">
-                                <div class="imagen-custom">
-                                    <img src="../../../../assets/images/Logos/mapa.png" alt="Direccion">
-                                </div>
-                                <span style="font-size: 20px; font-family: 'Courier New', Courier, monospace;"><b>Direccion</b></span>
-                            </a>
-                        </div>
                         </td>
                     </tr>
                     <tr>
                     <td>
-                        <div style="flex: 0 0 25%; max-width: 25%; padding: 0 15px;">
                             <a href="/estado-civil" class="dropdown-item">
                                 <div class="imagen-custom">
                                     <img src="../../../../assets/images/Logos/ec.png" alt="estado-civil">
                                 </div>
                                 <span style="font-size: 20px; font-family: 'Courier New', Courier, monospace;"><b>Estado Civil</b></span>
                             </a>
-                        </div>
                     </td>
                     <td>
-                        <div style="flex: 0 0 25%; max-width: 25%; padding: 0 15px;">
                             <a href="/genero" class="dropdown-item">
                                 <div class="imagen-custom">
                                     <img src="../../../../assets/images/Logos/ge.png" alt="Genero">
                                 </div>
                                 <span style="font-size: 20px; font-family: 'Courier New', Courier, monospace; "><b>Género</b></span>
                             </a>
-                        </div>
                     </td>
                     <td>
-                        <div style="flex: 0 0 25%; max-width: 25%; padding: 0 15px;">
                             <a href="/municipio" class="dropdown-item">
                                 <div class="imagen-custom">
                                     <img src="../../../../assets/images/Logos/mun.png" alt="Municipio">
                                 </div>
                                 <span style="font-size: 20px; font-family: 'Courier New', Courier, monospace;"><b>Municipio</b></span>
                             </a>
-                        </div>
                     </td>
-                    <td>
-                        <div style="flex: 0 0 25%; max-width: 25%; padding: 0 15px;">
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="/direccion" class="dropdown-item">
+                                <div class="imagen-custom">
+                                    <img src="../../../../assets/images/Logos/mapa.png" alt="Direccion">
+                                </div>
+                                <span style="font-size: 20px; font-family: 'Courier New', Courier, monospace;"><b>Direccion</b></span>
+                            </a>
+                        </td> 
+                        <td>
                             <a href="/tipo-sangre" class="dropdown-item">
                                 <div class="imagen-custom">
                                     <img src="../../../../assets/images/Logos/sangre.png" alt="tipo-sangre">
                                 </div>
                                 <span style="font-size: 20px; font-family: 'Courier New', Courier, monospace;"><b>Tipo Sangre</b></span>
                             </a>
-                        </div>
-                    </td>
+                    </td>   
+                    <td>
+                        <a href="/relacion-paciente" class="dropdown-item">
+                            <div class="imagen-custom">
+                                <img src="../../../../assets/images/Logos/emer.png" alt="Relacion-pacientes">
+                            </div>
+                            <span style="font-size: 20px; font-family: 'Courier New', Courier, monospace;"><b>Relacion Pacientes</b></span>
+                        </a>
+                </td>                    
                     </tr>
                 </table>
             </div>             
         </div>
-        <a routerLink="/menu">
+        </div>
+        <a routerLink="/datos-personales">
             <img src="../../../assets/images/Logos/reg.png" alt="menu" style="position: absolute; bottom: 10px; left: 300px; width: 50px; height: auto; object-fit: cover;">
           </a>
     </div>

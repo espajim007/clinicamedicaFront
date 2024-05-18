@@ -1,1 +1,249 @@
-<p>expedientes works!</p>
+<div class="container-fluid d-flex justify-content-center align-items-center vh-100" style="background-image: url('../../../assets/images/2.jpg'); background-size: cover; background-position: center;">
+  <div class="container-fluid">
+      <div class="row flex-nowrap">
+        <div class="col-auto">
+            <app-navigation></app-navigation>
+        </div>
+        <div class="col py-2 d-flex ">
+          <div class="content-area">
+            <div class ="imagen-custom ">
+              <img src="../../../../assets/images/Logos/fi.png" alt="Ficha">
+            </div>
+            <hr>
+            <form  #agregarForm="ngForm">
+              <table>
+                  <tr>
+                      <td>
+                        <div class="form-group">
+                          <label for="primerNombre" style="margin-right: 5px;">PrimerNombre:</label>
+                          <input type="text" id="primerNombre" name="primerNombre" required style="width: 100px; font-size: 14px; border-radius: 10px;">
+                        </div>
+                      </td>
+                      <td>
+                        <div class="form-group">
+                          <label for="segundoNombre" style="margin-right: 5px;">SegundoNombre:</label>
+                          <input type="text" id="segundoNombre" name="segundoNombre" required style="width: 100px; font-size: 14px;border-radius: 10px;">
+                          </div>
+                      </td>
+                      <td>
+                        <div class="form-group">
+                          <label for="nit" style="margin-right: 5px;">NIT:</label>
+                          <input type="number" id="nit" name="nit" required style="width: 100px; font-size: 14px;border-radius: 10px;">
+                          </div>
+                      </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="form-group">
+                        <label for="primerapellido" style="margin-right: 5px;">PrimerApellido:</label>
+                        <input type="text" id="primerapellido" name="primerapellido" required style="width: 100px; font-size: 14px;border-radius: 10px;">
+                        </div>
+                      
+                    </td>
+                  <td>
+                    <div class="form-group">
+                      <label for="segundoapellido" style="margin-right: 5px;">SegundoApellido:</label>
+                      <input type="text" id="segundoapellido" name="segundoapellido" required style="width: 100px; font-size: 14px;border-radius: 10px;">
+                      </div>
+                  </td>
+                  <td>
+                    <div class="form-group">
+                    <label for="dpi" style="margin-right: 5px;">DPI:</label>
+                    <input type="number" id="dpi" name="dpi" required style="width: 100px; font-size: 14px;border-radius: 10px;">
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="form-group">
+                      <label for="telefono" style="margin-right: 5px;">Telefono:</label>
+                      <input type="number" id="telefono" name="telefono" required style="width: 100px; font-size: 14px;border-radius: 10px;">
+                      </div>
+                  </td>
+                  <td>
+                    <div class="form-group">
+                    <label for="correo" style="margin-right: 5px;">Correo:</label>
+                    <input type="email" id="correo" name="correo" required style="width: 100px; font-size: 14px;border-radius: 10px;">
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-group">
+                      <label for="ocupacion" style="margin-right: 5px;">Ocupacion:</label>
+                      <input type="text" id="ocupacion" name="ocupacion" required style="width: 100px; font-size: 14px;border-radius: 10px;">
+                      </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="form-group">
+                      <label for="tipoSangre">TipoSangre:</label>
+                      <select id="tipoSangre" name="tipoSangre" required style="width: 80px; font-size: 14px;border-radius: 10px;">
+                        <option ></option>
+                      </select>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-group">
+                      <label for="estadoCivil">EstadoCivil:</label>
+                      <select id="estadoCivil" name="estadoCivil" required style="width: 80px; font-size: 14px;border-radius: 10px;">
+                        <option ></option>
+                      </select>
+                      </div>
+                </td>
+                <td>
+                  <div class="form-group">
+                    <label for="genero" style="margin-right: 5px;">Genero:</label>
+                    <select id="genero" name="genero" required style="width: 80px; font-size: 14px;border-radius: 10px;">
+                      <option ></option>
+                    </select>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="form-group">
+                    <label for="edad" style="margin-right: 5px;">Edad:</label>
+                    <input type="number" id="edad" name="edad" required style="width: 100px; font-size: 14px;border-radius: 10px;">
+                    </div>
+                  
+                </td>
+                <td>
+                  <div class="form-group">
+                    <label for="Aseguradora" style="margin-right: 5px;">Aseguradora:</label>
+                    <input type="text" id="Aseguradora" name="Aseguradora" required style="width: 100px; font-size: 14px;border-radius: 10px;">
+                  </div>
+                </td>
+                <td>
+                  <div class="form-group">
+                    <label for="fechanacimiento" style="margin-right: 5px;">Nacimiento:</label>
+                    <input type="date" id="fechanacimiento" name="fechanacimiento" required style="width: 100px; font-size: 14px;border-radius: 10px;">
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </form>
+          <div class ="imagen-custom ">
+            <img src="../../../../assets/images/Logos/dire.png" alt="Direccion">
+          </div>
+          <hr>
+          <form  #agregarForm="ngForm">
+          <table>
+            <tr>
+              <td>
+                <div class="form-group">
+                  <label for="departamento" style="margin-right: 5px;">Departamento:</label>
+                  <input type="text" id="departamento" name="departamento" required style="width: 100px; font-size: 14px;border-radius: 10px;">
+                </div>
+              </td>
+              <td>
+                <div class="form-group">
+                  <label for="avenida" style="margin-right: 5px;">Avenida:</label>
+                  <input type="text" id="avenida" name="avenida" required style="width: 50px; font-size: 14px;border-radius: 10px;">
+                </div>
+              </td>
+              <td>
+                <div class="form-group">
+                  <label for="zonacalle" style="margin-right: 5px;">Zona/Calle:</label>
+                  <input type="text" id="zonacalle" name="zonacalle" required style="width: 50px; font-size: 14px;border-radius: 10px;">
+                </div>
+              </td>
+              <td>
+                <div class="form-group"> 
+                  <label for="nocalle" style="margin-right: 5px;">No.Calle:</label>
+                  <input type="text" id="nocalle" name="nocalle" required style="width: 50px; font-size: 14px;border-radius: 10px;">
+                </div>
+              </td>
+            </tr>
+          </table>
+          <table>
+            <tr>
+              <td>
+                <div class="form-group">
+                  <label for="municipio" style="margin-right: 5px;">Municipio:</label>
+                  <input type="text" id="municipio" name="municipio" required style="width: 100px; font-size: 14px;border-radius: 10px;">
+                </div>
+              </td>
+              <td>
+                <div class="form-group">
+                  <label for="extra" style="margin-right: 5px;">IndicacionExtra:</label>
+                  <input type="text" id="extra" name="extra" required style="width: 200px; font-size: 14px;border-radius: 10px;">
+                </div>  
+              </td>
+            </tr>
+          </table>
+          </form>
+        </div>
+        <div class="content-area" style="max-height: 400px; overflow-y: auto;align-content: center;">
+          <div class ="imagen-custom ">
+            <img src="../../../../assets/images/Logos/cont.png" alt="Contacto">
+          </div>
+          <hr>
+            <form  #agregarForm="ngForm">
+            <table>
+              <tr>
+                <td>
+                  <div class="form-group">
+                    <label for="primerNombre" style="margin-right: 5px;">PrimerNombre:</label>
+                    <input type="text" id="primerNombre" name="primerNombre" required style="width: 100px; font-size: 14px;border-radius: 10px;">
+                  </div>
+              </td>
+              <td>
+                <div class="form-group">
+                  <label for="segundoNombre" style="margin-right: 5px;">SegundoNombre:</label>
+                  <input type="text" id="segundoNombre" name="segundoNombre" required style="width: 100px; font-size: 14px;border-radius: 10px;">
+                </div>
+              </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="form-group">
+                    <label for="primerapellido" style="margin-right: 5px;">PrimerApellido:</label>
+                    <input type="text" id="primerapellido" name="primerapellido" required style="width: 100px; font-size: 14px;border-radius: 10px;">
+                  </div>
+                </td>
+              <td>
+                <div class="form-group">
+                  <label for="segundoapellido" style="margin-right: 5px;">SegundoApellido:</label>
+                  <input type="text" id="segundoapellido" name="segundoapellido" required style="width: 100px; font-size: 14px;border-radius: 10px;">
+                </div>
+              </td>
+              </tr>
+            </table>
+            <table>
+              <tr>
+                <td>
+                  <div class="form-group">
+                    <label for="genero" style="margin-right: 5px;">Genero:</label>
+                    <select id="genero" name="genero" required style="width: 100px; font-size: 14px;border-radius: 10px;">
+                      <option ></option>
+                    </select>
+                  </div>
+              </td>
+              <td>
+                <div class="form-group">
+                  <label for="telefono" style="margin-right: 5px;">Telefono:</label>
+                  <input type="number" id="telefono" name="telefono" required style="width: 100px; font-size: 14px;border-radius: 10px;">
+                </div>
+            </td>
+            <td>
+              <div class="form-group">
+                <label for="relacion" style="margin-right: 5px;">Relacion:</label>
+                <select id="relacion" name="relacion" required style="width: 100px; font-size: 14px;border-radius: 10px;">
+                  <option ></option>
+                </select>
+              </div>
+          </td>
+              </tr>
+            </table>
+            </form>
+            <div class="text-center">
+              <button class="btn btn-primary" >Guardar</button>
+            </div>
+            </div>
+          </div>
+      </div>
+      <a routerLink="/paciente">
+        <img src="../../../assets/images/Logos/reg.png" alt="menu" style="position: absolute; bottom: 10px; left: 200px; width: 50px; height: auto; object-fit: cover;">
+      </a>
+  </div>
+</div>
