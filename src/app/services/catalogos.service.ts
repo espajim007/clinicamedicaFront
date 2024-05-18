@@ -14,6 +14,9 @@ import { especialidad } from '../models/especialidad.interface';
 import { aseguradora } from '../models/aseguradora.interface';
 import { medicoEspecialidad } from '../models/medicoEspecialidad.interface';
 import { direccion } from '../models/direccion.interface';
+import { puesto } from '../models/puesto.interface';
+import { contactoEmergencia } from '../models/contactoEmergencia.interface';
+import { relacionPaciente } from '../models/relacionPaciente';
 @Injectable({
   providedIn: 'root'
 })
@@ -115,16 +118,47 @@ export class CatalogosService {
   agregarMedicoEspecialidad(datos: any){
     return this.http.post<any>(`${this.baseUrl}catalogos/nueva-medico-especialidad`, datos);
   }
-    // direccion
-    getDireccion() {
-      return this.http.get<direccion[]>(`${this.baseUrl}catalogos/direccion`); 
-    }
-    editarDireccion(datos: any){
-      return this.http.post<any>(`${this.baseUrl}catalogos/editar-direccion`, datos);
-    }
-    agregarDireccion(datos: any){
-      return this.http.post<any>(`${this.baseUrl}catalogos/nueva-direccion`, datos);
-    }
+  // direccion
+  getDireccion() {
+    return this.http.get<direccion[]>(`${this.baseUrl}catalogos/direccion`); 
+  }
+  editarDireccion(datos: any){
+    return this.http.post<any>(`${this.baseUrl}catalogos/editar-direccion`, datos);
+  }
+  agregarDireccion(datos: any){
+    return this.http.post<any>(`${this.baseUrl}catalogos/nueva-direccion`, datos);
+  }
 
+      // PUESTO
+  getPuesto() {
+    return this.http.get<puesto[]>(`${this.baseUrl}catalogos/puesto`); 
+  }
+  editarPuesto(datos: any){
+    return this.http.post<any>(`${this.baseUrl}catalogos/editar-puesto`, datos);
+  }
+  agregarPuesto(datos: any){
+    return this.http.post<any>(`${this.baseUrl}catalogos/nuevo-puesto`, datos);
+  }
+      // RelacionPaciente
+    getRelaciones() {
+    return this.http.get<relacionPaciente[]>(`${this.baseUrl}catalogos/contacto-emergencia`); 
+  }
+  editarRelacion(datos: any){
+    return this.http.post<any>(`${this.baseUrl}catalogos/editar-relacion-paciente`, datos);
+  }
+  agregarRelacion(datos: any){
+    return this.http.post<any>(`${this.baseUrl}catalogos/nueva-relacion-paciente`, datos);
+  }  
+
+  // Contacto Emergencia
+  getContacto() {
+    return this.http.get<contactoEmergencia[]>(`${this.baseUrl}catalogos/contacto-emergencia`); 
+  }
+  editarContacto(datos: any){
+    return this.http.post<any>(`${this.baseUrl}catalogos/editar-contacto-emergencia`, datos);
+  }
+  agregarContacto(datos: any){
+    return this.http.post<any>(`${this.baseUrl}catalogos/nuevo-contacto-emergencia`, datos);
+  }
 
 }

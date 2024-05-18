@@ -1,1 +1,52 @@
-<p>editar-direccion works!</p>
+<div class="container mt-5 position-relative modal-content">
+    <h2>Editar Direccion</h2>
+    <!-- Botón de cerrar modal -->
+    <button type="button" class="close" aria-label="Close" (click)="cerrarModal()" style="position: absolute; top: 0; right: 0;">
+      <span aria-hidden="true"><i class="fas fa-times"></i></span>
+    </button>
+    <div class="modal-body">
+        <form (ngSubmit)="guardarCambios()" #editarForm="ngForm">
+            <div class="form-group">
+                <label>ID:</label>
+                <input type="text" class="form-control" name="id" [(ngModel)]="direccionSelecionada.id_direccion" disabled>
+            </div>
+            <div class="form-group">
+                <label>Municipio:</label>
+                <select class="form-control" name="idMunicipio" [(ngModel)]="direccionSelecionada.id_municipio">
+                  <option *ngFor="let municipio of municipios" [value]="municipio.id_municipio">{{municipio.nombre}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Calle:</label>
+                <input type="text" class="form-control" name="calle" [(ngModel)]="direccionSelecionada.calle" required>
+            </div>
+            <div class="form-group">
+                <label>Avenida:</label>
+                <input type="text" class="form-control" name="avenida" [(ngModel)]="direccionSelecionada.avenida" required>
+            </div>
+            <div class="form-group">
+                <label>Zona o Barrio:</label>
+                <input type="text" class="form-control" name="zonaBarrio" [(ngModel)]="direccionSelecionada.zona_barrio" required>
+            </div>
+            <div class="form-group">
+                <label>Residencial o Colonia:</label>
+                <input type="text" class="form-control" name="residencialCol" [(ngModel)]="direccionSelecionada.residencial_colonia" required>
+            </div>
+            <div class="form-group">
+                <label>No. Vivienda:</label>
+                <input type="text" class="form-control" name="noVivienda" [(ngModel)]="direccionSelecionada.numero_vivienda" required>
+            </div>
+            <div class="form-group">
+                <label>indicacion Extra:</label>
+                <input type="text" class="form-control" name="indicacion" [(ngModel)]="direccionSelecionada.indicacion_extra" required>
+            </div>
+
+            <div class="button-container">
+                <!-- Espacio entre los botones -->
+                <div style="width: 1rem;"></div>
+                <!-- Botón para guardar cambios -->
+                <button type="submit" class="btn btn-primary" [disabled]="editarForm.invalid">Guardar Cambios</button>
+            </div>
+        </form>
+    </div>
+</div>

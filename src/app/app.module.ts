@@ -80,6 +80,9 @@ import { CitaMenuComponent } from './components/Catalogos/cita-menu/cita-menu.co
 import { AgregarPuestoComponent } from './components/Catalogos/puesto/agregar-puesto/agregar-puesto.component';
 import { EditarPuestoComponent } from './components/Catalogos/puesto/editar-puesto/editar-puesto.component';
 import { PuestoComponent } from './components/Catalogos/puesto/puesto/puesto.component';
+import { EditarRelacionPacienteComponent } from './components/Catalogos/Relacion-pacientes/editar-relacion-paciente/editar-relacion-paciente.component';
+import { AgregarRelacionPacienteComponent } from './components/Catalogos/Relacion-pacientes/agregar-relacion-paciente/agregar-relacion-paciente.component';
+import { RelacionPacienteComponent } from './components/Catalogos/Relacion-pacientes/relacion-paciente/relacion-paciente.component'; 
 @NgModule({
   declarations: [
     AppComponent,
@@ -154,7 +157,10 @@ import { PuestoComponent } from './components/Catalogos/puesto/puesto/puesto.com
     CitaMenuComponent,
     AgregarPuestoComponent,
     EditarPuestoComponent,
-    PuestoComponent
+    PuestoComponent,
+    EditarRelacionPacienteComponent,
+    AgregarRelacionPacienteComponent,
+    RelacionPacienteComponent
   ],
   imports: [
     BrowserModule,

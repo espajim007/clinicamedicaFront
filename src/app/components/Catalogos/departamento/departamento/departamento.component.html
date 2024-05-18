@@ -24,7 +24,6 @@
                           </tr>
                         </thead>
                         <tbody>
-                          <!-- Aquí se genera la lista -->
                           <!-- Usé *ngFor para iterar sobre los registros -->
                           <tr *ngFor="let departamento of departamentos | paginate: { itemsPerPage: 5, currentPage: page }">
                             <td>{{ departamento.id_departamento }}</td>

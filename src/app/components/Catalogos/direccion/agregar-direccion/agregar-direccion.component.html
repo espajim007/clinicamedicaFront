@@ -1,29 +1,44 @@
-<h2>Agregar Nuevo Usuario</h2>
+<h2>Agregar Nueva Direccion</h2>
 <div class="modal-header">
   <button type="button" class="close" aria-label="Close" (click)="cerrarModal()" style="position: absolute; top: 0; right: 0;">
     <span aria-hidden="true"><i class="fas fa-times"></i></span>
-</button>
+  </button>
 </div>
 <div class="modal-body">
-  <form (ngSubmit)="guardarNuevoUsuario()" #agregarForm="ngForm">
-    <div class="form-group">
-      <label for="nombre">Nombre:</label>
-      <input type="text" class="form-control" id="nombre" [(ngModel)]="nuevoUsuario.nombre" name="nombre" required>
-    </div>
-    <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="email" class="form-control" id="email" [(ngModel)]="nuevoUsuario.email" name="email" required>
-    </div>
-    <div class="form-group">
-        <label for="email">Contraseña:</label>
-        <input type="password" class="form-control" id="contrasenia" [(ngModel)]="nuevoUsuario.contrasenia" name="contrasenia" required>
+  <div class="modal-content">
+    <form (ngSubmit)="guardarNuevo()" #agregarForm="ngForm">
+      <div class="form-group">
+          <label for="rol">Municipio:</label>
+          <select class="form-control" id="rol" [(ngModel)]="nuevaDireccion.id_municipio" name="municipio">
+            <option *ngFor="let municipio of municipios" [value]="municipio.id_municipio">{{ municipio.nombre }}</option>
+          </select>
+        </div>
+      <div class="form-group">
+        <label for="nombre">Calle:</label>
+        <input type="text" class="form-control" id="Calle" [(ngModel)]="nuevaDireccion.calle" name="calle" required>
       </div>
-    <div class="form-group">
-      <label for="rol">Rol:</label>
-      <select class="form-control" id="rol" [(ngModel)]="nuevoUsuario.id_rol" name="rol">
-        <option *ngFor="let rol of roles" [value]="rol.id_rol">{{ rol.nombre }}</option>
-      </select>
-    </div>
-    <button type="button" class="btn btn-primary" (click)="guardarNuevoUsuario()" [disabled]="agregarForm.invalid">Guardar</button>
-  </form>
+      <div class="form-group">
+          <label for="nombre">Avenida:</label>
+          <input type="text" class="form-control" id="avenida" [(ngModel)]="nuevaDireccion.avenida" name="avenida" required>
+      </div>
+      <div class="form-group">
+          <label for="nombre">Zona o Barrio:</label>
+          <input type="text" class="form-control" id="zonaBarrio" [(ngModel)]="nuevaDireccion.zona_barrio" name="zonaBarrio" required>
+      </div>
+      <div class="form-group">
+          <label for="nombre">Residencial o Colonia:</label>
+          <input type="text" class="form-control" id="resCol" [(ngModel)]="nuevaDireccion.residencial_colonia" name="resCol" required>
+      </div>
+      <div class="form-group">
+          <label for="nombre">No Vivienda:</label>
+          <input type="text" class="form-control" id="noVivienda" [(ngModel)]="nuevaDireccion.numero_vivienda" name="noVivienda" required>
+      </div>
+      <div class="form-group">
+          <label for="nombre">Indicacion Extra:</label>
+          <input type="text" class="form-control" id="indicacion" [(ngModel)]="nuevaDireccion.indicacion_extra" name="indicacion">
+      </div>
+      
+      <button type="button" class="btn btn-primary" (click)="guardarNuevo()" [disabled]="agregarForm.invalid">Guardar</button>
+    </form>
+  </div>
 </div>
