@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { CatalogosService } from 'src/app/services/catalogos.service';
+
+
 
 @Component({
   selector: 'app-agregar-ficha-paciente',
@@ -7,9 +11,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AgregarFichaPacienteComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(private catalogosService: CatalogosService, private dialog: MatDialog) { }
 
   ngOnInit(): void {
+
   }
+
 
 }

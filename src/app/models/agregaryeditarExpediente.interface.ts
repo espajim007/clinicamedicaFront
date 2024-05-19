@@ -1,9 +1,7 @@
-export interface agregaryeditarExpediente {
-    //Tabla Expediente
-    id_expediente?: number;
-    paciente_id_paciente?: number;
-    fecha_creacion?: Date;
+export interface editarAgregarExpediente {
     //Tabla ficha_Paciente
+    id_Expediente?: number;
+    id_paciente?: number;
     aseguradora_id_aseguradora?: number;
     id_contacto_emergencia?: number;
     id_direccion?: number;
@@ -21,11 +19,6 @@ export interface agregaryeditarExpediente {
     correo_electronico?: string;
     NIT?: string;
     observaciones?: string;
-    //Tabla aseguradora
-    nombre_aseguradora?: string;
-    copago?: number;
-    telefono_aseguradora?: number;
-    Correo_aseguradora?: string;
     //Tabla contacto_emergencia
     id_relacion_paciente?: number;
     primer_nombre_contacoe?: string;
@@ -33,11 +26,8 @@ export interface agregaryeditarExpediente {
     primer_apellido_contactoe?: string;
     segundo_apellido_contactoe?: string;
     telefono_contactoe?: number;
-    //Tabla relacion
-    relacion?: string;
-    //Tabla genero de contacto emergencia
-    genero_contactoe?: string;
-    //Tabla direccion de ficha paciente
+    id_generoContacto?: number;
+    //Tabla direccion
     id_municipio?: number;
     calle?: string;
     avenida?: string;
@@ -45,17 +35,4 @@ export interface agregaryeditarExpediente {
     residencial_colonia?: string;
     numero_vivienda?: string;
     indicacion_extra?: string;
-    //Tabla municipio
-    id_departamento?: number;
-    nombre_municpio?: string;
-    //Tabla departamento
-    nombre_departamento?: string;
-    //Tabla tipo de sangre
-    Nombre_tipo_sangre?: string;
-    //Tabla ocupacion
-    nombre_ocupacion?: string;
-    //Tabla genero paciente
-    genero_paciente?: string;
-    //Tabla estado_civil
-    nombre_estado_civil?: string;
   }

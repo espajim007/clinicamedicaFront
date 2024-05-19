@@ -17,6 +17,8 @@ import { direccion } from '../models/direccion.interface';
 import { puesto } from '../models/puesto.interface';
 import { contactoEmergencia } from '../models/contactoEmergencia.interface';
 import { relacionPaciente } from '../models/relacionPaciente';
+import { expediente } from '../models/expediente.interface';
+import { fichaPaciente } from '../models/fichaPaciente.interface';
 @Injectable({
   providedIn: 'root'
 })
@@ -161,4 +163,16 @@ export class CatalogosService {
     return this.http.post<any>(`${this.baseUrl}catalogos/nuevo-contacto-emergencia`, datos);
   }
 
+    // Contacto Emergencia
+  getExpediente() {
+    return this.http.get<expediente[]>(`${this.baseUrl}catalogos/expediente`); 
+  }
+  getFichaPaciente() {
+    return this.http.get<fichaPaciente[]>(`${this.baseUrl}catalogos/ficha-paciente`); 
+  }
+
+ //registro de usuarios 
+ editarPacienteCompleto(datos: any){
+  return this.http.post<any>(`${this.baseUrl}catalogos/editar-ficha-paciente`, datos);
+}
 }
