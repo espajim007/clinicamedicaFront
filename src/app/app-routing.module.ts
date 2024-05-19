@@ -34,6 +34,9 @@ import { CitaMenuComponent } from './components/Catalogos/cita-menu/cita-menu.co
 import { PuestoComponent } from './components/Catalogos/puesto/puesto/puesto.component';
 import { EmpleadoClinicaComponent } from './components/Catalogos/empleado-clinica/empleado-clinica.component';
 import { RelacionPacienteComponent } from './components/Catalogos/Relacion-pacientes/relacion-paciente/relacion-paciente.component'; 
+import { EditarFichaPacienteComponent } from './components/Catalogos/ficha-paciente/editar-ficha-paciente/editar-ficha-paciente.component';
+import { AgregarFichaPacienteComponent } from './components/Catalogos/ficha-paciente/agregar-ficha-paciente/agregar-ficha-paciente.component';
+import { VerFichaPacienteComponent } from './components/Catalogos/ficha-paciente/ver-ficha-paciente/ver-ficha-paciente.component';
 
 
 const routes: Routes = [
@@ -56,6 +59,9 @@ const routes: Routes = [
   {path:'estado-civil', component: EstadoCivilComponent},
   {path:'expediente', component: ExpedientesComponent},
   {path:'ficha-paciente', component: FichaPacienteComponent},
+  {path: 'editar-ficha-paciente/:id', component: EditarFichaPacienteComponent },
+  {path:'agregar-ficha-paciente', component: AgregarFichaPacienteComponent},
+  {path:'ver-ficha-paciente', component: VerFichaPacienteComponent},
   {path:'genero', component: GeneroComponent},
   {path:'medico', component: MedicoComponent},
   {path:'medico-especialidad', component: MedicoEspecialidadComponent},
