@@ -13,7 +13,6 @@ import { municipio } from 'src/app/models/municipio.interface';
 import { relacionPaciente } from 'src/app/models/relacionPaciente';
 import { aseguradora } from 'src/app/models/aseguradora.interface';
 import { ocupacion } from 'src/app/models/ocupacion.interface'; 
-import { agregaryeditarEmpleado } from 'src/app/models/agregaryeditarEmpleado.interface';
 import { editarAgregarExpediente } from 'src/app/models/agregaryeditarExpediente.interface';
 @Component({
   selector: 'app-editar-ficha-paciente',
