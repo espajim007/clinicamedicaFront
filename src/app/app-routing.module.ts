@@ -37,6 +37,8 @@ import { RelacionPacienteComponent } from './components/Catalogos/Relacion-pacie
 import { EditarFichaPacienteComponent } from './components/Catalogos/ficha-paciente/editar-ficha-paciente/editar-ficha-paciente.component';
 import { AgregarFichaPacienteComponent } from './components/Catalogos/ficha-paciente/agregar-ficha-paciente/agregar-ficha-paciente.component';
 import { VerFichaPacienteComponent } from './components/Catalogos/ficha-paciente/ver-ficha-paciente/ver-ficha-paciente.component';
+import { EditarEmpleadoComponent } from './components/Catalogos/empleado/editar-empleado/editar-empleado.component';
+import { EditarMedicoComponent } from './components/Catalogos/medico/editar-medico/editar-medico.component';
 
 
 const routes: Routes = [
@@ -54,6 +56,7 @@ const routes: Routes = [
   {path:'departamento', component: DepartamentoComponent},
   {path:'direccion', component: DireccionComponent},
   {path:'empleado', component: EmpleadoComponent},
+  {path:'editar-empleado', component: EditarEmpleadoComponent},
   {path:'especialidad', component: EspecialidadComponent},
   {path:'estado-cita', component: EstadoCitaComponent},
   {path:'estado-civil', component: EstadoCivilComponent},
@@ -77,6 +80,7 @@ const routes: Routes = [
   {path:'puesto', component: PuestoComponent},
   {path:'empleado-clinica', component: EmpleadoClinicaComponent},
   {path:'relacion-paciente', component: RelacionPacienteComponent},
+  {path:'editar-medico', component: EditarMedicoComponent},
  ];
 
 @NgModule({

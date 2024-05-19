@@ -1,0 +1,30 @@
+.content-area {
+
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    margin-left: 250px;
+    align-self: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 5px; 
+    white-space: nowrap; 
+}
+
+label {
+    margin-right: 5px; 
+}
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+  .imagen-custom {
+    display: block;
+    margin: 0 auto;
+}
