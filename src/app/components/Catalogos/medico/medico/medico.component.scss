@@ -1,30 +1,143 @@
-.content-area {
-
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    border-radius: 10px;
-    margin-left: 250px;
-    align-self: center;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-td {
-    padding: 5px; 
-    white-space: nowrap; 
-}
-
-label {
-    margin-right: 5px; 
-}
-
-  .form-group {
-    margin-bottom: 20px;
+.table-responsive {
+    overflow-x: auto;
   }
-  .imagen-custom {
-    display: block;
-    margin: 0 auto;
-}
+  
+  .card {
+    background-color: #bbd2e8;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-header {
+    font-family: 'Roboto', sans-serif; 
+    font-size: 24px; 
+    font-weight: bold; 
+    text-align: center;
+  }
+  
+  .card-body {
+    padding: 0;
+  }
+  
+  .table {
+    width: 100%;
+    margin-bottom: 0;
+    background-color: #6074b1;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+  }
+  
+  .table th,
+  .table td {
+    padding: 1rem;
+    vertical-align: top;
+    border-top: 0;
+  }
+  
+  .table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #3d75ad;
+    color: #212529; /* Cambiado a color oscuro para los títulos */
+  }
+  
+  .table tbody + tbody {
+    border-top: 2px solid #467db3;
+  }
+  
+  .table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 123, 255, 0.05);
+  }
+  
+  .table-hover tbody tr:hover {
+    background-color: rgba(0, 123, 255, 0.075);
+  }
+  
+  .btn-edit {
+    color: #007bff;
+    background-color: transparent;
+    border: none;
+  }
+  
+  .btn-edit:hover {
+    background-color: rgba(0, 123, 255, 0.1);
+  }
+  
+
+  // estilos de paginacion
+  .pagination-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .pagination-controls .ngx-pagination {
+    display: flex;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .pagination-controls .ngx-pagination li {
+    margin-right: 5px;
+  }
+  
+  .pagination-controls .ngx-pagination li a,
+  .pagination-controls .ngx-pagination li span {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .pagination-controls .ngx-pagination li.active a,
+  .pagination-controls .ngx-pagination li.active span {
+    background-color: #0056b3;
+  }
+  
+  .pagination-controls .ngx-pagination li a:hover,
+  .pagination-controls .ngx-pagination li span:hover {
+    background-color: #0056b3;
+  }
+  
+  .pagination-controls .ngx-pagination li.disabled a,
+  .pagination-controls .ngx-pagination li.disabled span {
+    background-color: #ccc;
+    color: #888;
+    cursor: not-allowed;
+  }
+  
+  //para boton
+  .btn-add-user {
+    background-color: #4CAF50; /* Color de fondo */
+    border: none; /* Sin borde */
+    color: white; /* Color del texto */
+    text-align: center; /* Alineación del texto */
+    text-decoration: none; /* Sin subrayado */
+    display: inline-block; /* Mostrar como elemento de línea */
+    transition-duration: 0.4s; /* Duración de la transición */
+    cursor: pointer; /* Cursor de puntero al pasar */
+    border-radius: 12px; /* Borde redondeado */
+    border: 2px solid transparent; /* Borde transparente */
+    padding: 8px 16px; /* Reducir el espaciado interno */
+    font-size: 14px; /* Reducir el tamaño del texto */
+    margin: 4px; /* Reducir el margen exterior */
+  }
+  
+  .btn-add-user:hover {
+    background-color: white; /* Cambio de color de fondo al pasar */
+    color: #4CAF50; /* Cambio de color de texto al pasar */
+    border-color: #4CAF50; /* Cambio de color del borde al pasar */
+  }
+  
+  .btn-add-user:active {
+    background-color: #4CAF50; /* Color de fondo al hacer clic */
+    color: white; /* Color de texto al hacer clic */
+    border-color: #4CAF50; /* Color de borde al hacer clic */
+  }
+  
+  .btn-add-user:focus {
+    outline: none; /* Sin contorno al enfocar */
+  }
+  

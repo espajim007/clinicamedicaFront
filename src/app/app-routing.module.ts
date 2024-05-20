@@ -80,7 +80,7 @@ const routes: Routes = [
   {path:'puesto', component: PuestoComponent},
   {path:'empleado-clinica', component: EmpleadoClinicaComponent},
   {path:'relacion-paciente', component: RelacionPacienteComponent},
-  {path:'editar-medico', component: EditarMedicoComponent},
+  {path:'editar-medico/:id', component: EditarMedicoComponent},
  ];
 
 @NgModule({

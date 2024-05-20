@@ -50,7 +50,7 @@ export class EditarFichaPacienteComponent implements OnInit {
         this.paciente = pacienteEncontrado !== undefined ? [pacienteEncontrado] : [];
       },
       error => {
-        console.error('Error al obtener datos del paciente:', error);
+        console.error('Error al obtener datos :', error);
       }
     );
 
@@ -60,7 +60,7 @@ export class EditarFichaPacienteComponent implements OnInit {
         this.direccion = direccionEncontrado !== undefined ? [direccionEncontrado] : [];
       },
       error => {
-        console.error('Error al obtener datos del paciente:', error);
+        console.error('Error al obtener datos del =:', error);
       }
     );
     this.catalogosService.getContacto().subscribe(
@@ -69,7 +69,7 @@ export class EditarFichaPacienteComponent implements OnInit {
         this.contactoEmergencia = contactoEncontrado !== undefined ? [contactoEncontrado] : [];
       },
       error => {
-        console.error('Error al obtener datos del paciente:', error);
+        console.error('Error al obtener datos del :', error);
       }
     );
     

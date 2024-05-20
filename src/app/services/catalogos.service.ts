@@ -19,6 +19,9 @@ import { contactoEmergencia } from '../models/contactoEmergencia.interface';
 import { relacionPaciente } from '../models/relacionPaciente';
 import { expediente } from '../models/expediente.interface';
 import { fichaPaciente } from '../models/fichaPaciente.interface';
+import { medico } from '../models/medico.interface';
+import { empleado } from '../models/empleado.interface';
+import { agregaryeditarMedico } from '../models/agregaryeditarMedico.interface';
 @Injectable({
   providedIn: 'root'
 })
@@ -175,4 +178,29 @@ export class CatalogosService {
  editarPacienteCompleto(datos: any){
   return this.http.post<any>(`${this.baseUrl}catalogos/editar-ficha-paciente`, datos);
 }
+
+  // Medico
+  getMedico() {
+    return this.http.get<medico[]>(`${this.baseUrl}catalogos/medico`); 
+  }
+  editarMedico(datos: any){
+    return this.http.post<any>(`${this.baseUrl}catalogos/editar-medico-especialidad`, datos);
+  }
+  agregarMedico(datos: any){
+    return this.http.post<any>(`${this.baseUrl}catalogos/nueva-medico-especialidad`, datos);
+  }
+
+   // empleados
+   getEmpleados() {
+    return this.http.get<empleado[]>(`${this.baseUrl}catalogos/empleados`); 
+  }
+
+    getMedicoPorID(id: number): Observable<agregaryeditarMedico> {
+    return this.http.get<agregaryeditarMedico>(`${this.baseUrl}catalogos/medico-id/${id}`);
+  }
+
+
+
+
+
 }
