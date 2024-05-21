@@ -6,6 +6,7 @@ import { especialidad } from 'src/app/models/especialidad.interface'; 3
 import { medico } from 'src/app/models/medico.interface';
 import { EditarMedicoEspecialidadComponent } from '../editar-medico-especialidad/editar-medico-especialidad.component'; 
 import { AgregarMedicoEspecialidadComponent } from '../agregar-medico-especialidad/agregar-medico-especialidad.component'; 
+import { empleado } from 'src/app/models/empleado.interface';
 
 @Component({
   selector: 'app-medico-especialidad',
@@ -17,6 +18,7 @@ export class MedicoEspecialidadComponent implements OnInit {
   medicoEspecialidades: medicoEspecialidad[] = [];
   especialidades: especialidad[] = [];
   medico: medico[] = [];
+  empleado: empleado[] = [];
   page: number = 1;
   medicoEspecialidSeleccionado: medicoEspecialidad | null = null;
   Backup: medicoEspecialidad | null = null; // Variable para guardar la copia de respaldo del usuario
@@ -37,6 +39,14 @@ export class MedicoEspecialidadComponent implements OnInit {
     this.catalogosService.getEspecialidad().subscribe(
       (data: especialidad[]) => {
         this.especialidades = data;
+      },
+      error => {
+        console.error('Error al obtener roles:', error);
+      }
+    );
+    this.catalogosService.getEmpleados().subscribe(
+      (data: empleado[]) => {
+        this.empleado = data;
       },
       error => {
         console.error('Error al obtener roles:', error);
@@ -76,6 +86,14 @@ export class MedicoEspecialidadComponent implements OnInit {
   getEspecialidad(id: number): string {
     const dato = this.especialidades.find(dato => dato.id_especialidad === id);
     return dato?.descipcion ?? 'Sin especialidad';
+  }
+  getMedico(id: number) {
+    const dato = this.medico.find(dato => dato.id_empleado === id);
+    return dato?.id_empleado ?? 0;
+  }
+  getNombre(id: number): string {
+    const dato = this.especialidades.find(dato => dato.id_especialidad === id);
+    return dato?.descipcion ?? '';
   }
   
 

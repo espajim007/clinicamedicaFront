@@ -11,7 +11,7 @@ export interface agregaryeditarMedico {
   segundo_nombre?: string;
   primer_apellido?: string;
   segundo_apellido?: string;
-  DPI?: string;
+  identif?: number;
   fecha_nacimiento?: Date;
   telefono?: number;
   correo_electronico?: string;

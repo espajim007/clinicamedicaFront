@@ -12,7 +12,7 @@
               <div class="col-md-12">
                 <div class="card" style="width: 100%; height: auto;">
                   <div class="card-header">
-                    Lista Pacientes
+                    Lista Medicos
                   </div>
                   <div class="card-body">
                     <div class="table-responsive">
@@ -30,7 +30,7 @@
                         <tbody>
                           <tr *ngFor="let medico of medicos | paginate: { itemsPerPage: 5, currentPage: page }">
                             <td>{{ medico.id_medico }}</td>
-                            <td>{{ getNombre(medico.id_empleado ?? 0) }}</td>
+                            <td>{{ getNombre(medico.id_empleado ?? 0)}}</td>
                             <td>{{ medico.colegiado }}</td>
                             <td>{{ getExpecialidad(getIdEspecialidad(medico.id_medico ?? 0)) }}</td>
                             <td>

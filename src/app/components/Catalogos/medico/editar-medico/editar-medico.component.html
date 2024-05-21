@@ -28,10 +28,10 @@
                             </div>
                         </td>
                         <td>
-                            <div class="form-group">
-                                <label for="dpi" style="margin-right: 5px;">DPI:</label>
-                                <input type="number" id="dpi" name="dpi" required [(ngModel)]="medico.DPI"
-                                style="width: 100px; font-size: 14px;border-radius: 10px;">
+                          <div class="form-group">
+                            <label for="dpi" style="margin-right: 5px;">DPI:</label>
+                            <input type="text" id="dpi" name="dpi" required [(ngModel)]="medico.identif"
+                             style="width: 100px; font-size: 14px;border-radius: 10px;" disabled>
                             </div>
                         </td>
                     </tr>
@@ -61,11 +61,15 @@
                   </tr>
                   <tr>
                     <td>
-                        <div class="form-group">
-                            <label for="especialidad" style="margin-right: 5px;">Especialidad:</label>
-                            <input type="text" id="especialidad" name="especialidad" required [(ngModel)]="medico.id_especialidad"
-                            style="width: 100px; font-size: 14px;border-radius: 10px;">
-                        </div>
+                      <div class="form-group">
+                        <label for="especialidad" style="margin-right: 5px;">Especialidad:</label>
+                        <select id="especialidad" name="especialidad" required [(ngModel)]="medico.id_especialidad"
+                          style="width: 80px; font-size: 14px; border-radius: 10px;">
+                          <option *ngFor="let especialidad of especialidades" [value]="especialidad.id_especialidad">
+                            {{ especialidad.nombre }}
+                          </option>
+                        </select>
+                      </div>
                     </td>
                     <td>
                         <div class="form-group">
@@ -87,37 +91,47 @@
                   <tr>
                     <td>
                         <div class="form-group">
-                            <label for="estadoCivil">EstadoCivil:</label>
-                            <select id="estadoCivil" name="estadoCivil" required [(ngModel)]="medico.id_estado_civil"
-                            style="width: 80px; font-size: 14px;border-radius: 10px;">
-                              <option ></option>
-                            </select>
+                          <label for="estadoCivil" style="margin-right: 5px;">EstadoCivil:</label>
+                          <select id="estadoCivil" name="estadoCivil" required [(ngModel)]="medico.id_estado_civil"
+                            style="width: 80px; font-size: 14px; border-radius: 10px;">
+                            <option *ngFor="let estado of estados" [value]="estado.id_estado_civil">
+                              {{ estado.nombre }}
+                            </option>
+                          </select>
                         </div>
                     </td>
                     <td>
                         <div class="form-group">
-                            <label for="genero" style="margin-right: 5px;">Genero:</label>
-                            <select id="genero" name="genero" required [(ngModel)]="medico.id_genero"
-                            style="width: 80px; font-size: 14px;border-radius: 10px;">
-                              <option ></option>
-                            </select>
+                          <label for="genero" style="margin-right: 5px;">EstadoCivil:</label>
+                          <select id="genero" name="genero" required [(ngModel)]="medico.id_genero"
+                            style="width: 80px; font-size: 14px; border-radius: 10px;">
+                            <option *ngFor="let genero of generos" [value]="medico.id_genero">
+                              {{ genero.genero }}
+                            </option>
+                          </select>
                         </div>
                   </td>
                 </tr>
                     <tr>
                         <td>
-                            <div class="form-group">
-                                <label for="fechanacimiento" style="margin-right: 5px;">Nacimiento:</label>
-                                <input type="date" id="fechanacimiento" name="fechanacimiento" required [(ngModel)]="medico.fecha_nacimiento"
+                          <div class="form-group">
+                            <label for="fechanacimiento" style="margin-right: 5px;">Nacimiento:</label>
+                            <!-- Usamos la directiva date para formatear la fecha -->
+                            <input type="date" id="fechanacimiento" name="fechanacimiento" required 
+                                [ngModel]="medico.fecha_nacimiento | date:'yyyy-MM-dd'" 
+                                (ngModelChange)="medico.fecha_nacimiento = $event" 
                                 style="width: 100px; font-size: 14px;border-radius: 10px;">
-                              </div>
+                        </div>                        
                         </td>
                         <td>
-                            <div class="form-group">
-                                <label for="fechacontratacion" style="margin-right: 5px;">Contratacion:</label>
-                                <input type="date" id="fechacontratacion" name="fechacontratacion" required [(ngModel)]="medico.fecha_contratacion"
+                          <div class="form-group">
+                            <label for="fechacontratacion" style="margin-right: 5px;">Contratacion:</label>
+                            <!-- Usamos la directiva date para formatear la fecha -->
+                            <input type="date" id="fechacontratacion" name="fechacontratacion" required 
+                                [ngModel]="medico.fecha_contratacion| date:'yyyy-MM-dd'" 
+                                (ngModelChange)="medico.fecha_nacimiento = $event" 
                                 style="width: 100px; font-size: 14px;border-radius: 10px;">
-                              </div>
+                        </div>  
                         </td>
                     </tr>
                 </table>
@@ -129,16 +143,16 @@
               <tr>
                 <td>
                   <div class="form-group">
-                    <label for="departamento" style="margin-right: 5px;">Departamento:</label>
-                    <input type="text" id="departamento" name="departamento" required [(ngModel)]="medico.id_departamento"
-                     style="width: 100px; font-size: 14px;border-radius: 10px;">
+                    <label for="avenida" style="margin-right: 5px;">Avenida:</label>
+                    <input type="text" id="avenida" name="avenida" [(ngModel)]="medico.avenida"
+                     required style="width: 50px; font-size: 14px;border-radius: 10px;">
                   </div>
                 </td>
                 <td>
                   <div class="form-group">
-                    <label for="avenida" style="margin-right: 5px;">Avenida:</label>
-                    <input type="text" id="avenida" name="avenida" [(ngModel)]="medico.avenida"
-                     required style="width: 50px; font-size: 14px;border-radius: 10px;">
+                    <label for="ResCol" style="margin-right: 5px;">Residencial/Colonia:</label>
+                    <input type="text" id="ResCol" name="ResCol" required [(ngModel)]="medico.residencial_colonia"
+                    style="width: 50px; font-size: 14px;border-radius: 10px;">
                   </div>
                 </td>
                 <td>
@@ -162,8 +176,12 @@
                 <td>
                   <div class="form-group">
                     <label for="municipio" style="margin-right: 5px;">Municipio:</label>
-                    <input type="text" id="municipio" name="municipio" required [(ngModel)]="medico.id_municipio"
-                    style="width: 100px; font-size: 14px;border-radius: 10px;">
+                    <select id="municipio" name="municipio" required [(ngModel)]="medico.id_municipio"
+                      style="width: 80px; font-size: 14px; border-radius: 10px;">
+                      <option *ngFor="let municipio of municipios" [value]="municipio.id_municipio">
+                        {{ municipio.nombre }}
+                      </option>
+                    </select>
                   </div>
                 </td>
                 <td>

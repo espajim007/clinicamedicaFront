@@ -51,16 +51,14 @@ export class MedicoComponent implements OnInit {
         this.empleados = data;
       },
       error => {
-        console.error('Error al obtener datos del paciente:', error);
+        console.error('Error al obtener datos:', error);
       }
     );
   }
-
   getNombre(id: number): string {
     const dato = this.empleados.find(dato => dato.id_empleado === id);
-    return (dato?.primer_nombre + ' ' + dato?.primer_apellido ) ?? '';
+    return dato?.primer_nombre +' '+ dato?.primer_apellido ?? '';  
   }
-  
   getExpecialidad(id: number): string {
     const dato = this.especialidades.find(dato => dato.id_especialidad === id);
     return String(dato?.nombre) ?? '';  
@@ -69,9 +67,6 @@ export class MedicoComponent implements OnInit {
     const dato = this.idEspecialidades.find(dato => dato.id_medico === id);
     return dato?.especialidad_id_especialidad ?? 0;  
   }
-
-
-  // Método para navegar a la página de edición de un paciente
   editar(Medico: number ): void {
     this.router.navigate(['/editar-medico', Medico]);
   }
