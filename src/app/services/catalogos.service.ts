@@ -22,6 +22,7 @@ import { fichaPaciente } from '../models/fichaPaciente.interface';
 import { medico } from '../models/medico.interface';
 import { empleado } from '../models/empleado.interface';
 import { agregaryeditarMedico } from '../models/agregaryeditarMedico.interface';
+import { agregaryeditarFichaPAciente } from '../models/agregaryeditarFichaPaciente.interface';
 @Injectable({
   providedIn: 'root'
 })
@@ -193,7 +194,9 @@ export class CatalogosService {
     return this.http.get<agregaryeditarMedico>(`${this.baseUrl}catalogos/medico-id/${id}`);
   }
 
-
+  getPacientePorID(id: number): Observable<agregaryeditarFichaPAciente> {
+    return this.http.get<agregaryeditarFichaPAciente>(`${this.baseUrl}catalogos/ficha-paciente-id/${id}`); 
+  }
 
    // empleados
    getEmpleados() {
