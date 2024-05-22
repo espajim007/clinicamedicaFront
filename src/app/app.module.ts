@@ -83,7 +83,9 @@ import { PuestoComponent } from './components/Catalogos/puesto/puesto/puesto.com
 import { EditarRelacionPacienteComponent } from './components/Catalogos/Relacion-pacientes/editar-relacion-paciente/editar-relacion-paciente.component';
 import { AgregarRelacionPacienteComponent } from './components/Catalogos/Relacion-pacientes/agregar-relacion-paciente/agregar-relacion-paciente.component';
 import { RelacionPacienteComponent } from './components/Catalogos/Relacion-pacientes/relacion-paciente/relacion-paciente.component';
-import { VerFichaPacienteComponent } from './components/Catalogos/ficha-paciente/ver-ficha-paciente/ver-ficha-paciente.component'; 
+import { VerFichaPacienteComponent } from './components/Catalogos/ficha-paciente/ver-ficha-paciente/ver-ficha-paciente.component';
+import { VerMedicoComponent } from './components/Catalogos/medico/ver-medico/ver-medico.component'; 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -162,7 +164,9 @@ import { VerFichaPacienteComponent } from './components/Catalogos/ficha-paciente
     EditarRelacionPacienteComponent,
     AgregarRelacionPacienteComponent,
     RelacionPacienteComponent,
-    VerFichaPacienteComponent
+    VerFichaPacienteComponent,
+    VerMedicoComponent,
+    
   ],
   imports: [
     BrowserModule,

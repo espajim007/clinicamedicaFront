@@ -21,7 +21,6 @@ export class EditarMedicoComponent implements OnInit {
   municipios: municipio[] = [];
 
   medico: agregaryeditarMedico = {};
-  nombreDepartamento: string = ''; 
   constructor(private route: ActivatedRoute, private catalogosService: CatalogosService, private cdr: ChangeDetectorRef ) { this.medico = {};}
 
   ngOnInit(): void {
@@ -36,11 +35,6 @@ export class EditarMedicoComponent implements OnInit {
     this.catalogosService.getMedicoPorID(this.id).subscribe(
       (data: agregaryeditarMedico) => {
         this.medico = data; // Asigna el objeto recibido directamente a medico, no es necesario un array
-        if (this.medico.id_departamento !== undefined) {
-          this.nombreDepartamento = this.getDepartamento(this.medico.id_departamento);
-        } else {
-          console.error('ID de departamento es undefined');
-        }
         console.log(this.medico);
         this.cdr.detectChanges();
       },
@@ -96,5 +90,17 @@ export class EditarMedicoComponent implements OnInit {
     return dato?.nombre ?? '';
   }
 
+  guardarDatos() {
+    console.log(this.medico);
 
+    this.catalogosService.editMedico(this.medico).subscribe(
+      response => {
+        // Manejar respuesta exitosa
+        console.log('Medico editado con éxito:', response);
+      },
+      error => {
+        alert('Error al agregar el registro: ' + error.error);
+      }
+    );
+  }
 }

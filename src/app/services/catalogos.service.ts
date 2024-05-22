@@ -183,12 +183,15 @@ export class CatalogosService {
   getMedico() {
     return this.http.get<medico[]>(`${this.baseUrl}catalogos/medico`); 
   }
-  editarMedico(datos: any){
-    return this.http.post<any>(`${this.baseUrl}catalogos/editar-medico-especialidad`, datos);
+  editMedico(datos: any){
+    return this.http.put<any>(`${this.baseUrl}catalogos/editar-medico`, datos);
   }
   agregarMedico(datos: any){
-    return this.http.post<any>(`${this.baseUrl}catalogos/nueva-medico-especialidad`, datos);
+    return this.http.post<any>(`${this.baseUrl}catalogos/nueva-medico`, datos);
   }
+
+
+
 
    // empleados
    getEmpleados() {

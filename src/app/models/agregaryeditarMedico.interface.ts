@@ -12,7 +12,7 @@ export interface agregaryeditarMedico {
   primer_apellido?: string;
   segundo_apellido?: string;
   identif?: number;
-  fecha_nacimiento?: Date;
+  fecha_nacimiento?: string;
   telefono?: number;
   correo_electronico?: string;
   fecha_contratacion?: Date;
