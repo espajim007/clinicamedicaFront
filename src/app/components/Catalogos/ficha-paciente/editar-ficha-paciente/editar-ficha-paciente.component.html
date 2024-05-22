@@ -279,6 +279,9 @@
                                 </div>
                             </td>
                         </tr>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary float-end" [disabled]="editarForm.invalid" >Editar Paciente</button>
+                        </div>
                     </table>
                 </div>
             </td>
@@ -287,6 +290,9 @@
             </form>
           </div>
         </div>
+        <a routerLink="/ficha-paciente">
+            <img src="../../../assets/images/Logos/reg.png" alt="menu" style="position: absolute; bottom: 10px; left: 200px; width: 50px; height: auto; object-fit: cover;">
+          </a>
     </div>
 </div>
 
