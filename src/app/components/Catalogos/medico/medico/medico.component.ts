@@ -70,5 +70,8 @@ export class MedicoComponent implements OnInit {
   editar(Medico: number ): void {
     this.router.navigate(['/editar-medico', Medico]);
   }
+  ver(Medico: number ): void {
+    this.router.navigate(['/ver-medico', Medico]);
+  }
 
 }

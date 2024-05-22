@@ -1,1 +1,209 @@
-<p>agregar-medico works!</p>
+<div class="container-fluid d-flex justify-content-center align-items-center vh-100" style="background-image: url('../../../assets/images/2.jpg'); background-size: cover; background-position: center;">
+    <div class="container-fluid">
+        <div class="row flex-nowrap">
+          <div class="col-auto">
+              <app-navigation></app-navigation>
+          </div>
+          <div class="col py-2 d-flex">
+            <div class="content-area">
+              <div class ="imagen-custom ">
+                <img src="../../../../assets/images/Logos/medic.png" alt="Medico">
+              </div>
+              <hr>
+              <form  #agregarForm="ngForm" (submit)="guardarDatos()">
+                <table>
+                    <tr>
+                        <td>
+                          <div class="form-group">
+                            <label for="primerNombre" style="margin-right: 5px;">PrimerNombre:</label>
+                            <input type="text" id="primerNombre" name="primerNombre" required [(ngModel)]="medico.primer_nombre"
+                             style="width: 100px; font-size: 14px; border-radius: 10px;">
+                          </div>
+                        </td>
+                        <td>
+                          <div class="form-group">
+                            <label for="segundoNombre" style="margin-right: 5px;">SegundoNombre:</label>
+                            <input type="text" id="segundoNombre" name="segundoNombre" required [(ngModel)]="medico.segundo_nombre"
+                             style="width: 100px; font-size: 14px;border-radius: 10px;">
+                            </div>
+                        </td>
+                        <td>
+                          <div class="form-group">
+                            <label for="dpi" style="margin-right: 5px;">DPI:</label>
+                            <input type="text" id="dpi" name="dpi" required [(ngModel)]="medico.identif"
+                             style="width: 100px; font-size: 14px;border-radius: 10px;">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="form-group">
+                          <label for="primerapellido" style="margin-right: 5px;">PrimerApellido:</label>
+                          <input type="text" id="primerapellido" name="primerapellido" required [(ngModel)]="medico.primer_apellido"
+                          style="width: 100px; font-size: 14px;border-radius: 10px;">
+                          </div>
+                        
+                      </td>
+                    <td>
+                      <div class="form-group">
+                        <label for="segundoapellido" style="margin-right: 5px;">SegundoApellido:</label>
+                        <input type="text" id="segundoapellido" name="segundoapellido" required [(ngModel)]="medico.segundo_apellido"
+                        style="width: 100px; font-size: 14px;border-radius: 10px;">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label for="telefono" style="margin-right: 5px;">Telefono:</label>
+                            <input type="number" id="telefono" name="telefono" required [(ngModel)]="medico.telefono"
+                            style="width: 100px; font-size: 14px;border-radius: 10px;">
+                        </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="form-group">
+                        <label for="especialidad" style="margin-right: 5px;">Especialidad:</label>
+                        <select id="especialidad" name="especialidad" required [(ngModel)]="medico.id_especialidad"
+                          style="width: 80px; font-size: 14px; border-radius: 10px;">
+                          <option *ngFor="let especialidad of especialidades" [value]="especialidad.id_especialidad">
+                            {{ especialidad.nombre }}
+                          </option>
+                        </select>
+                      </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label for="colegiado" style="margin-right: 5px;">No.Colegiado:</label>
+                            <input type="number" id="colegiado" name="colegiado" required [(ngModel)]="medico.colegiado"
+                            style="width: 100px; font-size: 14px;border-radius: 10px;">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label for="correo" style="margin-right: 5px;">Correo:</label>
+                            <input type="email" id="correo" name="correo" required [(ngModel)]="medico.correo_electronico"
+                             style="width: 100px; font-size: 14px;border-radius: 10px;">
+                        </div>
+                    </td>
+                  </tr>
+                </table>
+                <table>
+                  <tr>
+                    <td>
+                        <div class="form-group">
+                          <label for="estadoCivil" style="margin-right: 5px;">EstadoCivil:</label>
+                          <select id="estadoCivil" name="estadoCivil" required [(ngModel)]="medico.id_estado_civil"
+                            style="width: 80px; font-size: 14px; border-radius: 10px;">
+                            <option *ngFor="let estado of estados" [value]="estado.id_estado_civil">
+                              {{ estado.nombre }}
+                            </option>
+                          </select>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                          <label for="genero" style="margin-right: 5px;">Genero:</label>
+                          <select id="genero" name="genero" required [(ngModel)]="medico.id_genero"
+                            style="width: 80px; font-size: 14px; border-radius: 10px;">
+                            <option *ngFor="let genero of generos" [value]="genero.idgenero">
+                              {{ genero.genero }}
+                            </option>
+                          </select>
+                        </div>
+                  </td>
+                </tr>
+                    <tr>
+                        <td>
+                        <div class="form-group">
+                          <label for="fechanacimiento" style="margin-right: 5px;">Nacimiento:</label>
+                          <input type="text" id="fechanacimiento" name="fechanacimiento" required [(ngModel)]="medico.fecha_nacimiento"
+                           style="width: 100px; font-size: 14px;border-radius: 10px;">
+                      </div>                       
+                        </td>
+                        <td>
+                        <div class="form-group">
+                          <label for="fechacontratacion" style="margin-right: 5px;">Contratacion:</label>
+                          <input  id="fechacontratacion" name="fechacontratacion" required [(ngModel)]="medico.fecha_contratacion"
+                           style="width: 100px; font-size: 14px;border-radius: 10px;">
+                      </div>                         
+                        </td>
+                    </tr>
+                </table>
+            <div class ="imagen-custom ">
+              <img src="../../../../assets/images/Logos/dire.png" alt="Direccion">
+            </div>
+            <hr>
+            <table>
+              <tr>
+                <td>
+                  <div class="form-group">
+                    <label for="avenida" style="margin-right: 5px;">Avenida:</label>
+                    <input type="text" id="avenida" name="avenida" [(ngModel)]="medico.avenida"
+                     required style="width: 50px; font-size: 14px;border-radius: 10px;">
+                  </div>
+                </td>
+                <td>
+                  <div class="form-group">
+                    <label for="ResCol" style="margin-right: 5px;">Residencial/Colonia:</label>
+                    <input type="text" id="ResCol" name="ResCol" required [(ngModel)]="medico.residencial_colonia"
+                    style="width: 50px; font-size: 14px;border-radius: 10px;">
+                  </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                      <label for="NoVivienda" style="margin-right: 5px;">no.vivienda:</label>
+                      <input type="text" id="NoVivienda" name="NoVivienda" required [(ngModel)]="medico.numero_vivienda"
+                      style="width: 50px; font-size: 14px;border-radius: 10px;">
+                    </div>
+                  </td>
+                <td>
+                  <div class="form-group">
+                    <label for="zonacalle" style="margin-right: 5px;">Zona/Barrio:</label>
+                    <input type="text" id="zonacalle" name="zonacalle" required [(ngModel)]="medico.zona_barrio"
+                    style="width: 50px; font-size: 14px;border-radius: 10px;">
+                  </div>
+                </td>
+                <td>
+                  <div class="form-group"> 
+                    <label for="nocalle" style="margin-right: 5px;">No.Calle:</label>
+                    <input type="text" id="nocalle" name="nocalle" required [(ngModel)]="medico.calle"
+                    style="width: 50px; font-size: 14px;border-radius: 10px;">
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <table>
+              <tr>
+                <td>
+                  <div class="form-group">
+                    <label for="municipio" style="margin-right: 5px;">Municipio:</label>
+                    <select id="municipio" name="municipio" required [(ngModel)]="medico.id_municipio"
+                      style="width: 80px; font-size: 14px; border-radius: 10px;">
+                      <option *ngFor="let municipio of municipios" [value]="municipio.id_municipio">
+                        {{ municipio.nombre }}
+                      </option>
+                    </select>
+                  </div>
+                </td>
+                <td>
+                  <div class="form-group">
+                    <label for="extra" style="margin-right: 5px;">IndicacionExtra:</label>
+                    <input type="text" id="extra" name="extra" required [(ngModel)]="medico.indicacion_extra"
+                     style="width: 200px; font-size: 14px;border-radius: 10px;">
+                  </div>  
+                </td>
+              </tr>
+            </table>
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary float-end"  >Editar Medico</button>
+          </div>
+            </form>
+          </div>
+            </div>
+        </div>
+        <a routerLink="/medico-clinica">
+          <img src="../../../assets/images/Logos/reg.png" alt="menu" style="position: absolute; bottom: 10px; left: 300px; width: 50px; height: auto; object-fit: cover;">
+        </a>
+    </div>
+  </div>
+  

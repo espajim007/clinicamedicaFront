@@ -21,7 +21,7 @@ export class EditarMedicoComponent implements OnInit {
   municipios: municipio[] = [];
 
   medico: agregaryeditarMedico = {};
-  constructor(private route: ActivatedRoute, private catalogosService: CatalogosService, private cdr: ChangeDetectorRef ) { this.medico = {};}
+  constructor(private route: ActivatedRoute, private catalogosService: CatalogosService, private cdr: ChangeDetectorRef ) {}
 
   ngOnInit(): void {
     const idParam = this.route.snapshot.paramMap.get('id');

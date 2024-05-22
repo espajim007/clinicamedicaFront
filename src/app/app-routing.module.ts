@@ -39,6 +39,8 @@ import { AgregarFichaPacienteComponent } from './components/Catalogos/ficha-paci
 import { VerFichaPacienteComponent } from './components/Catalogos/ficha-paciente/ver-ficha-paciente/ver-ficha-paciente.component';
 import { EditarEmpleadoComponent } from './components/Catalogos/empleado/editar-empleado/editar-empleado.component';
 import { EditarMedicoComponent } from './components/Catalogos/medico/editar-medico/editar-medico.component';
+import { VerMedicoComponent } from './components/Catalogos/medico/ver-medico/ver-medico.component';
+import { AgregarMedicoComponent } from './components/Catalogos/medico/agregar-medico/agregar-medico.component';
 
 
 const routes: Routes = [
@@ -81,6 +83,8 @@ const routes: Routes = [
   {path:'empleado-clinica', component: EmpleadoClinicaComponent},
   {path:'relacion-paciente', component: RelacionPacienteComponent},
   {path:'editar-medico/:id', component: EditarMedicoComponent},
+  {path:'ver-medico/:id', component: VerMedicoComponent},
+  {path:'agregar-medico', component: AgregarMedicoComponent},
  ];
 
 @NgModule({

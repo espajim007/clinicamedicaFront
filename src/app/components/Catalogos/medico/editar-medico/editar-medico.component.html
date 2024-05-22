@@ -10,7 +10,7 @@
                 <img src="../../../../assets/images/Logos/medic.png" alt="Medico">
               </div>
               <hr>
-              <form  #agregarForm="ngForm" (submit)="guardarDatos()">
+              <form  #editarForm="ngForm" (submit)="guardarDatos()">
                 <table>
                     <tr>
                         <td>
@@ -102,10 +102,10 @@
                     </td>
                     <td>
                         <div class="form-group">
-                          <label for="genero" style="margin-right: 5px;">EstadoCivil:</label>
+                          <label for="genero" style="margin-right: 5px;">Genero:</label>
                           <select id="genero" name="genero" required [(ngModel)]="medico.id_genero"
                             style="width: 80px; font-size: 14px; border-radius: 10px;">
-                            <option *ngFor="let genero of generos" [value]="medico.id_genero">
+                            <option *ngFor="let genero of generos" [value]="genero.idgenero">
                               {{ genero.genero }}
                             </option>
                           </select>
@@ -114,24 +114,18 @@
                 </tr>
                     <tr>
                         <td>
-                          <div class="form-group">
-                            <label for="fechanacimiento" style="margin-right: 5px;">Nacimiento:</label>
-                            <!-- Usamos la directiva date para formatear la fecha -->
-                            <input type="date" id="fechanacimiento" name="fechanacimiento" required 
-                                [ngModel]="medico.fecha_nacimiento | date:'yyyy-MM-dd'" 
-                                (ngModelChange)="medico.fecha_nacimiento = $event" 
-                                style="width: 100px; font-size: 14px;border-radius: 10px;">
-                        </div>                        
+                        <div class="form-group">
+                          <label for="fechanacimiento" style="margin-right: 5px;">Nacimiento:</label>
+                          <input type="text" id="fechanacimiento" name="fechanacimiento" required [(ngModel)]="medico.fecha_nacimiento"
+                           style="width: 100px; font-size: 14px;border-radius: 10px;">
+                      </div>                       
                         </td>
                         <td>
-                          <div class="form-group">
-                            <label for="fechacontratacion" style="margin-right: 5px;">Contratacion:</label>
-                            <!-- Usamos la directiva date para formatear la fecha -->
-                            <input type="date" id="fechacontratacion" name="fechacontratacion" required 
-                                [ngModel]="medico.fecha_contratacion | date:'yyyy-MM-dd'" 
-                                (ngModelChange)="medico.fecha_contratacion = $event" 
-                                style="width: 100px; font-size: 14px;border-radius: 10px;">
-                        </div>                        
+                        <div class="form-group">
+                          <label for="fechacontratacion" style="margin-right: 5px;">Contratacion:</label>
+                          <input  id="fechacontratacion" name="fechacontratacion" required [(ngModel)]="medico.fecha_contratacion"
+                           style="width: 100px; font-size: 14px;border-radius: 10px;">
+                      </div>                         
                         </td>
                     </tr>
                 </table>
@@ -152,6 +146,13 @@
                   <div class="form-group">
                     <label for="ResCol" style="margin-right: 5px;">Residencial/Colonia:</label>
                     <input type="text" id="ResCol" name="ResCol" required [(ngModel)]="medico.residencial_colonia"
+                    style="width: 50px; font-size: 14px;border-radius: 10px;">
+                  </div>
+                </td>
+                <td>
+                  <div class="form-group">
+                    <label for="NoVivienda" style="margin-right: 5px;">no.vivienda:</label>
+                    <input type="text" id="NoVivienda" name="NoVivienda" required [(ngModel)]="medico.numero_vivienda"
                     style="width: 50px; font-size: 14px;border-radius: 10px;">
                   </div>
                 </td>
@@ -194,7 +195,7 @@
               </tr>
             </table>
             <div class="text-center">
-              <button type="submit" class="btn btn-primary float-end" >Editar Medico</button>
+              <button type="submit" class="btn btn-primary float-end" [disabled]="editarForm.invalid" >Editar Medico</button>
           </div>
             </form>
           </div>

@@ -187,9 +187,11 @@ export class CatalogosService {
     return this.http.put<any>(`${this.baseUrl}catalogos/editar-medico`, datos);
   }
   agregarMedico(datos: any){
-    return this.http.post<any>(`${this.baseUrl}catalogos/nueva-medico`, datos);
+    return this.http.put<any>(`${this.baseUrl}catalogos/nuevo-medico`, datos);
   }
-
+  getMedicoPorID(id: number): Observable<agregaryeditarMedico> {
+    return this.http.get<agregaryeditarMedico>(`${this.baseUrl}catalogos/medico-id/${id}`);
+  }
 
 
 
@@ -198,9 +200,7 @@ export class CatalogosService {
     return this.http.get<empleado[]>(`${this.baseUrl}catalogos/empleados`); 
   }
 
-    getMedicoPorID(id: number): Observable<agregaryeditarMedico> {
-    return this.http.get<agregaryeditarMedico>(`${this.baseUrl}catalogos/medico-id/${id}`);
-  }
+
 
 
 

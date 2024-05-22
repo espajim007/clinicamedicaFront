@@ -4,6 +4,7 @@ export interface agregaryeditarMedico {
   colegiado?: number;
   id_empleado?: number;
   especialidad_id_especialidad?: number;// para intermedia catalogo medico
+  medico_id_especialidad?: number;
   id_especialidad?: number;
   id_genero?: number;
   id_estado_civil?: number;
@@ -15,7 +16,7 @@ export interface agregaryeditarMedico {
   fecha_nacimiento?: string;
   telefono?: number;
   correo_electronico?: string;
-  fecha_contratacion?: Date;
+  fecha_contratacion?: string;
   id_direccion?: number;
   id_departamento?: number;
   id_municipio?: number;
