@@ -9,7 +9,7 @@
                 <table>
                     <tr>
                         <td>
-                <div class="content-area" style=>
+                <div class="content-area">
                 <div class ="imagen-custom ">
                     <img src="../../../../assets/images/Logos/fi.png" alt="Paciente">
                 </div>
@@ -91,7 +91,9 @@
                           <label for="tiposangre" style="margin-right: 5px;">TipoSangre:</label>
                           <select id="tiposangre" name="tiposangre" required [(ngModel)]="paciente.id_tipo_sangre"
                           style="width: 80px; font-size: 14px; border-radius: 10px;">
-                            <option></option> 
+                          <option *ngFor="let tiposangre of tipoSangre" [value]="tiposangre.id_tipo_sangre">
+                            {{ tiposangre.nombre }}
+                          </option> 
                           </select>
                         </div>
                     </td>
@@ -100,7 +102,9 @@
                           <label for="estadoCivil" style="margin-right: 5px;">EstadoCivil:</label>
                           <select id="estadoCivil" name="estadoCivil" required [(ngModel)]="paciente.id_estado_civil"
                             style="width: 80px; font-size: 14px; border-radius: 10px;">
-                            <option></option> 
+                            <option *ngFor="let estadoCivil of estadoCivil" [value]="estadoCivil.id_estado_civil">
+                              {{ estadoCivil.nombre }}
+                            </option>
                           </select>
                         </div>
                     </td>
@@ -210,7 +214,7 @@
                 </div>
             </td>
             <td>
-                <div class="content-area" style=>
+                <div class="content-area" style="height: 350px;">
                     <div class ="imagen-custom ">
                         <img src="../../../../assets/images/Logos/cont.png" alt="Contacto">
                     </div>
@@ -274,15 +278,17 @@
                                     <label for="relacion_contacto" style="margin-right: 5px;">Relacion:</label>
                                     <select id="relacion_contacto" name="relacion_contacto" required [(ngModel)]="paciente.id_relacion_paciente"
                                       style="width: 80px; font-size: 14px; border-radius: 10px;">
-                                      <option></option>
+                                      <option *ngFor="let relacion of relacionPaciente" [value]="relacion.id_relacion_paciente">
+                                        {{ relacion.relacion }}
+                                      </option>
                                     </select>
                                 </div>
                             </td>
                         </tr>
-                        <div class="text-center">
-                            <button type="submit" class="btn btn-primary float-end" [disabled]="editarForm.invalid" >Editar Paciente</button>
-                        </div>
                     </table>
+                    <div class="text-center">
+                      <button type="submit" class="btn btn-primary float-end" [disabled]="editarForm.invalid" >Editar Paciente</button>
+                  </div>
                 </div>
             </td>
             </tr>
