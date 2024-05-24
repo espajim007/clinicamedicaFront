@@ -22,7 +22,6 @@
                             <th>ID </th>
                             <th>Medico</th>
                             <th>Especialidad</th>
-                            <th>Editar</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -33,9 +32,6 @@
                             <td>{{ medicoEspecialidad.id_medico }}</td>
                             <td>{{ getEspecialidad(medicoEspecialidad.especialidad_id_especialidad ?? 0) }}</td>
                             <td>
-                              <button class="btn btn-outline-primary btn-sm" (click)="abrirModalEditar(medicoEspecialidad)">
-                                <i class="fas fa-pencil-alt"></i>
-                              </button>
                             </td>
                           </tr>
                         </tbody>

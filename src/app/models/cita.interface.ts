@@ -5,6 +5,7 @@ export interface cita {
     expediente_id_expediente?: number;
     medico_id_medico?: number;
     id_estado_cita?: number;
-    fecha?: Date;
-    hora?: Time;
+    fecha?: string;
+    hora?: string;
+    id_empleado?: number;
   }

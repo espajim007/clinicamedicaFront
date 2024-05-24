@@ -23,6 +23,7 @@ import { medico } from '../models/medico.interface';
 import { empleado } from '../models/empleado.interface';
 import { agregaryeditarMedico } from '../models/agregaryeditarMedico.interface';
 import { agregaryeditarFichaPAciente } from '../models/agregaryeditarFichaPaciente.interface';
+import { cita } from '../models/cita.interface';
 @Injectable({
   providedIn: 'root'
 })
@@ -205,6 +206,15 @@ export class CatalogosService {
     return this.http.get<agregaryeditarFichaPAciente>(`${this.baseUrl}catalogos/ficha-paciente-id/${id}`); 
   }
 
+
+  // CITAS
+
+  getCita() {
+    return this.http.get<cita[]>(`${this.baseUrl}catalogos/cita`); 
+  }
+  editarCita(datos: any){
+    return this.http.post<any>(`${this.baseUrl}catalogos/editar-cita`, datos);
+  }
 
 
 
