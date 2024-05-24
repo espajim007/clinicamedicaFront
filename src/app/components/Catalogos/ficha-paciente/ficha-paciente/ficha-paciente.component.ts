@@ -51,4 +51,7 @@ export class FichaPacienteComponent implements OnInit {
   editar(id: number): void {
     this.router.navigate(['/editar-ficha-paciente', id]);
   }
+  ver(id: number): void {
+    this.router.navigate(['/ver-ficha-paciente', id]);
+  }
 }

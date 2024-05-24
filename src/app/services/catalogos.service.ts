@@ -167,7 +167,7 @@ export class CatalogosService {
     return this.http.post<any>(`${this.baseUrl}catalogos/nuevo-contacto-emergencia`, datos);
   }
 
-    // Contacto Emergencia
+  //Paciente
   getExpediente() {
     return this.http.get<expediente[]>(`${this.baseUrl}catalogos/expediente`); 
   }
@@ -175,10 +175,12 @@ export class CatalogosService {
     return this.http.get<fichaPaciente[]>(`${this.baseUrl}catalogos/ficha-paciente`); 
   }
 
- //registro de usuarios 
- editarPacienteCompleto(datos: any){
-  return this.http.post<any>(`${this.baseUrl}catalogos/editar-ficha-paciente`, datos);
-}
+  editarFichaPaciente(datos: any){
+    return this.http.put<any>(`${this.baseUrl}catalogos/editar-ficha-paciente`, datos);
+  }
+  agregarfichaPaciente(datos: any){
+    return this.http.put<any>(`${this.baseUrl}catalogos/nueva-ficha-paciente`, datos);
+  }
 
   // Medico
   getMedico() {
@@ -194,13 +196,13 @@ export class CatalogosService {
     return this.http.get<agregaryeditarMedico>(`${this.baseUrl}catalogos/medico-id/${id}`);
   }
 
-  getPacientePorID(id: number): Observable<agregaryeditarFichaPAciente> {
-    return this.http.get<agregaryeditarFichaPAciente>(`${this.baseUrl}catalogos/ficha-paciente-id/${id}`); 
-  }
-
    // empleados
    getEmpleados() {
     return this.http.get<empleado[]>(`${this.baseUrl}catalogos/empleados`); 
+  }
+
+  getPacientePorID(id: number): Observable<agregaryeditarFichaPAciente> {
+    return this.http.get<agregaryeditarFichaPAciente>(`${this.baseUrl}catalogos/ficha-paciente-id/${id}`); 
   }
 
 

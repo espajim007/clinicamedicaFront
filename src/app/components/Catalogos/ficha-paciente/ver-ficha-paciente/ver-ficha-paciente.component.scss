@@ -1,0 +1,38 @@
+.content-area {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    margin-left: 10px;
+    max-width: 650px; 
+    width: 100%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 5px; 
+    white-space: nowrap; 
+}
+
+label {
+    margin-right: 5px; 
+}
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .imagen-custom {
+    display: block;
+    margin: 0 auto;
+}
+
+.form-group input,
+        .form-group select {
+            width: 100%;
+            font-size: 14px;
+            border-radius: 10px;
+        }
