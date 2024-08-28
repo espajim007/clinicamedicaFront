@@ -169,14 +169,30 @@ import { VerMedicoComponent } from './components/Catalogos/medico/ver-medico/ver
     
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    NgxPaginationModule, //npm install ngx-pagination --save sirve para la paginacion de contenido
-    FormsModule,
-    MatDialogModule,
-    BrowserAnimationsModule 
+    BrowserModule,      //Proporciona los servicios necesarios para que una aplicación Angular funcione en un navegador.
+                        // Debe importarse una vez, típicamente en el módulo raíz (AppModule).
+
+    AppRoutingModule,   //Gestiona la configuración de las rutas en la aplicación Angular.
+                        //Se utiliza para definir y manejar la navegación dentro de la aplicación
+
+    ReactiveFormsModule, //Ofrece soporte para formularios reactivos (o model-driven forms), lo cual permite crear 
+                        //formularios complejos y dinámicos con validaciones integradas y gestión del estado del formulario.
+                        
+    HttpClientModule,   //Proporciona un conjunto de herramientas para hacer solicitudes HTTP. Se utiliza para comunicar 
+                        //la aplicación con servidores backend y obtener o enviar datos.
+
+    NgxPaginationModule, //Es un módulo externo que se usa para la paginación de contenido en la aplicación. Se debe instalar
+                         //con npm install ngx-pagination --save. Facilita la división de listas de datos en páginas más 
+                         //manejables.
+
+    FormsModule,         //Ofrece soporte para formularios basados en plantillas (template-driven forms),
+                        //lo cual permite crear formularios utilizando directivas Angular en plantillas HTML.
+
+    MatDialogModule,      //Pertenece a Angular Material y se utiliza para crear diálogos modales. Permite mostrar ventanas
+                          //emergentes con contenido variado, como formularios o mensajes de confirmación.
+
+    BrowserAnimationsModule //Habilita el soporte para animaciones en la aplicación Angular. Es necesario cuando se usan
+                            //componentes de Angular Material que dependen de animaciones para transiciones y efectos visuales.
 
   ],
   providers: [],
